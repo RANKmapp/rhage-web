@@ -161,6 +161,9 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 .rj-cutbadge { position: absolute; left: 6px; top: 6px; display: flex; gap: 6px; align-items: center; background: rgba(3,8,11,.82); border: 1px solid #FF5A1F; padding: 2px 8px; font: 600 12px 'Rajdhani', sans-serif; color: #eef4f6; pointer-events: none; }
 .rj-cutbadge b { font: 900 13px 'Saira Extra Condensed', sans-serif; letter-spacing: .12em; color: #FF5A1F; }
 .rj-cutbadge i { font-style: normal; }
+.rj-cutbadge { font-size: 15px; padding: 3px 10px; }
+.rj-cutbadge b { font-size: 16px; }
+.rj-play .rj-cutbadge { font-size: 12px; } .rj-play .rj-cutbadge b { font-size: 13px; }
 .rj-play .rj-cutwrap { padding: 0; }
 .rj-play .rj-cutbadge { padding: 2px 8px; }
 .rj-cutbadge { white-space: nowrap; }
@@ -2919,9 +2922,10 @@ class Component extends DCLogic {
     const p = PLAYS[J.playIdx];
     return `<div class="rj-wrap" style="justify-content:center;align-items:center;text-align:center">
       <div class="rj-kick gx-up">Intensity done</div>
-      <div class="gx-title gx-skew gx-up" style="--d:.1s;font-size:48px">Your Play cut is ready</div>
+      <div class="gx-title gx-skew gx-up" style="--d:.1s;font-size:44px">Your best scenes · <span style="color:#FF5A1F">15 sec max</span></div>
+      <div class="gx-mid gx-up" style="--d:.15s;font-size:19px;margin-top:-6px">Your Play cut: the shortest version of your Play, only the best moments</div>
       <div class="gx-up" style="--d:.2s">${cutVid(p, 'width:min(360px,70vw);max-height:150px;border:1.5px solid #FF5A1F;box-shadow:0 0 24px rgba(255,90,31,.5);display:block')}</div>
-      <div class="rj-row gx-up" style="--d:.35s;justify-content:center"><button class="rj-btn2" data-share="${J.playIdx}">Share it</button><button class="rj-btn2" data-desc="${J.playIdx}">✎ Edit</button><button class="rj-btn gx-start" data-act="tagnext" style="font-size:24px;padding:10px 34px">Tag it · round 2</button></div></div>`;
+      <div class="rj-row gx-up" style="--d:.35s;justify-content:center"><button class="rj-btn2" data-share="${J.playIdx}">Share Play cut</button><button class="rj-btn2" data-desc="${J.playIdx}">✎ Edit</button><button class="rj-btn gx-start" data-act="tagnext" style="font-size:24px;padding:10px 34px">Tag it · round 2</button></div></div>`;
   }
   const editBtn = (i, big) => `<button class="rj-back rj-edit" data-desc="${i}" aria-label="Edit name and description"${big ? ' style="font-size:16px;padding:7px 16px"' : ''}>✎ Edit</button>`;
   J.openEdit = (paused) => { J.editPaused = !!paused; J.modalBack = null; J.modal = 'describe'; J.modalPlay = J.playIdx; paint(); };
@@ -2930,7 +2934,7 @@ class Component extends DCLogic {
   const FR = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M17 7.5v5M14.5 10h5"/></svg>';
   const normFriends = (v) => String(v || '').split(/[\s,]+/).filter(Boolean).map((x) => x[0] === '@' ? x : '@' + x).join(' ');
   const friendsLine = (st) => st.friends ? `<span style="color:#f5c451;display:inline-flex;gap:4px;align-items:center">${FR}${esc(st.friends)}</span>` : '';
-  const cutBadge = `<div class="rj-cutbadge"><b>PLAY CUT</b><span><i>max 15</i>s<em> · your best scenes</em></span></div>`;
+  const cutBadge = `<div class="rj-cutbadge"><b>PLAY CUT</b><span><i>15</i> sec<em> · best scenes only</em></span></div>`;
   const cutVid = (p, extra) => `<div class="rj-cutwrap"><video src="${p.reel}" autoplay muted loop playsinline data-cut="1" style="${extra || ''}"></video>${cutBadge}</div>`;
   const contBtn = () => inBrief() ? `<button class="rj-btn gx-start" style="font-size:22px;padding:10px 30px" data-act="cont">Continue · Round 2 ›</button>` : '';
   function vDescribe() {
@@ -2950,7 +2954,8 @@ class Component extends DCLogic {
     const plats = ['TikTok', 'Discord', 'Instagram', 'YouTube Shorts', 'X', 'WhatsApp'];
     return `<div class="rj-wrap" style="justify-content:center">
       <div class="rj-top" style="justify-content:flex-start;gap:14px"><button class="rj-back" data-act="mclose">‹ Back</button><div class="rj-kick">Share your Play cut</div></div>
-      <div class="gx-mid" style="font-size:17px;margin:-4px 0 2px">Your best scenes from ${esc(ptitle(i))}, cut to 15 seconds max. Ready for TikTok, Shorts and Reels.</div>
+      <div class="gx-title gx-skew" style="font-size:30px;line-height:1.05">Best scenes only · <span style="color:#FF5A1F">15 sec max</span></div>
+      <div class="gx-mid" style="font-size:16px;margin:-2px 0 2px">The shortest version of ${esc(ptitle(i))}. Ready for TikTok, Shorts and Reels.</div>
       <div class="rj-grid2" style="align-items:start">
         ${cutVid(p, 'width:100%;max-height:170px;background:#000;border:1.5px solid #FF5A1F;display:block')}
         <div style="display:grid;gap:8px"><div class="rj-card" style="font-size:14px"><b style="color:#eef4f6">${esc(ptitle(i))}</b><br>${esc(cap)}${st.friends ? '<br>' + friendsLine(st) : ''}<div style="margin-top:6px">${editBtn(i)}</div></div>
