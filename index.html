@@ -2697,23 +2697,23 @@ class Component extends DCLogic {
 (function () {
   const PLAYS = [
     { n: 1, reel: 'media/reel-1.mp4', clip: 'media/play-1.mp4', thumb: 'media/thumb-p1c.jpg', title: 'Rocket fight and a close frag',
-      skills: [['Quick reactions in close fights', 9], ['Good rocket timing', 7], ['Fast health recovery', 26]],
+      skills: [['Quick reactions in close fights', 9, 'You reacted fast in the close fight'], ['Good rocket timing', 7, 'You timed your rockets well'], ['Fast health recovery', 26, 'You got your health back quickly']],
       work: [
-        { t: 'Avoid damage right after a frag', at: 11, why: 'You took 40 damage straight after your frag at 0:09. That is when enemies punish you.', drill: 'After a frag, step back behind cover for one second before moving on.' },
-        { t: 'Hold your angle at range', at: 33, why: 'At 0:33 you swapped direction mid-fight and lost your aim.', drill: 'Pick one wall edge and peek from it, do not cross open ground.' },
-        { t: 'Watch your flank', at: 54, why: 'The enemy at 0:54 came from your side and got close before you reacted.', drill: 'Turn your view every few seconds when you hear footsteps.' }] },
+        { t: 'Avoid damage right after a frag', me: 'You took damage right after your frag', at: 11, why: 'You took 40 damage straight after your frag at 0:09. That is when enemies punish you.', drill: 'After a frag, step back behind cover for one second before moving on.' },
+        { t: 'Hold your angle at range', me: 'You lost your aim at long range', at: 33, why: 'At 0:33 you swapped direction mid-fight and lost your aim.', drill: 'Pick one wall edge and peek from it, do not cross open ground.' },
+        { t: 'Watch your flank', me: 'An enemy surprised you from the side', at: 54, why: 'The enemy at 0:54 came from your side and got close before you reacted.', drill: 'Turn your view every few seconds when you hear footsteps.' }] },
     { n: 2, reel: 'media/reel-2.mp4', clip: 'media/play-2.mp4', thumb: 'media/thumb-p2g.jpg', title: 'Down to 29 health, then a duel',
-      skills: [['Wins close duels', 39], ['Stays calm at low health', 5], ['Smart health route', 15]],
+      skills: [['Wins close duels', 39, 'You won the close duel'], ['Stays calm at low health', 5, 'You stayed calm on low health'], ['Smart health route', 15, 'You took a smart route to health']],
       work: [
-        { t: 'Do not run into rockets', at: 3, why: 'You lost 41 health in one hit at 0:03 by running straight at the explosion.', drill: 'Strafe sideways when you see a rocket coming, never straight in.' },
-        { t: 'Pick up health before fights', at: 22, why: 'You started the fight at 0:22 before you were back to full health.', drill: 'Grab one more health pack before you look for the next fight.' },
-        { t: 'Finish fights faster', at: 46, why: 'The fight at 0:46 dragged on and gave the enemy time to recover.', drill: 'Switch to your strongest close-range weapon as soon as the enemy is near.' }] },
+        { t: 'Do not run into rockets', me: 'You ran straight into a rocket', at: 3, why: 'You lost 41 health in one hit at 0:03 by running straight at the explosion.', drill: 'Strafe sideways when you see a rocket coming, never straight in.' },
+        { t: 'Pick up health before fights', me: 'You fought before healing up', at: 22, why: 'You started the fight at 0:22 before you were back to full health.', drill: 'Grab one more health pack before you look for the next fight.' },
+        { t: 'Finish fights faster', me: 'Your fight dragged on too long', at: 46, why: 'The fight at 0:46 dragged on and gave the enemy time to recover.', drill: 'Switch to your strongest close-range weapon as soon as the enemy is near.' }] },
     { n: 3, reel: 'media/reel-3.mp4', clip: 'media/play-3.mp4', thumb: 'media/thumb-double-frag.jpg', title: 'Double frag and a hard death',
-      skills: [['Clutch frag under pressure', 41], ['Fast target switching', 47], ['Calm at low health', 52]],
+      skills: [['Clutch frag under pressure', 41, 'You landed the frag under pressure'], ['Fast target switching', 47, 'You switched targets fast'], ['Calm at low health', 52, 'You kept calm on low health']],
       work: [
-        { t: 'Use cover in close fights', at: 13, why: 'You took 70 damage in about a second at 0:13, standing in the open.', drill: 'Strafe-peek: fight from the edge of a wall, not in the middle of the room.' },
-        { t: 'Pick up health earlier', at: 51, why: 'At 0:51 you went into the next fight on low health and it cost you.', drill: 'Below 50 health, route to a health pack before re-engaging.' },
-        { t: 'Do not chase when hurt', at: 55, why: 'You chased at 0:55 on low health and got fragged.', drill: 'If health is low, let the enemy go and reset.' }] }
+        { t: 'Use cover in close fights', me: 'You fought in the open, without cover', at: 13, why: 'You took 70 damage in about a second at 0:13, standing in the open.', drill: 'Strafe-peek: fight from the edge of a wall, not in the middle of the room.' },
+        { t: 'Pick up health earlier', me: 'You went into a fight on low health', at: 51, why: 'At 0:51 you went into the next fight on low health and it cost you.', drill: 'Below 50 health, route to a health pack before re-engaging.' },
+        { t: 'Do not chase when hurt', me: 'You chased while hurt and got fragged', at: 55, why: 'You chased at 0:55 on low health and got fragged.', drill: 'If health is low, let the enemy go and reset.' }] }
   ];
   const TYPES = { mastery: ['The Technician', 'You play to get better and pull off clean moves.'], challenge: ['The Challenger', 'You want hard fights and love beating them.'], competition: ['The Duellist', 'You live for 1-v-1s and want to come out on top.'], action: ['The Chaos Maker', 'Explosions, speed and pure action are your thing.'], thrill: ['The Adrenaline Junkie', 'You play for the rush when it gets tense.'], completion: ['The Completionist', 'You want to finish everything the game offers.'], power: ['The Powerhouse', 'You love gearing up and getting stronger.'], fantasy: ['The Role Player', 'You play to be someone else for a while.'], story: ['The Storyteller', 'You play to find out what happens next.'], aesthetic: ['The Sightseer', 'You enjoy how the game looks and sounds.'], discovery: ['The Explorer', 'You want to find every corner and secret.'], social: ['The Team Player', 'You play for the people you play with.'], strategy: ['The Tactician', 'You win by planning and outsmarting.'] };
   const AXES = [['mastery', 'Mastery'], ['competition', 'Competition'], ['action', 'Action'], ['thrill', 'Thrill'], ['challenge', 'Challenge'], ['strategy', 'Strategy'], ['discovery', 'Discovery'], ['social', 'Social']];
@@ -2993,13 +2993,13 @@ class Component extends DCLogic {
   }
   function vFound() {
     const p = PLAYS[J.playIdx];
-    const li = (arr, d0) => arr.map((x, i) => `<div class="rj-li gx-in" style="--d:${d0 + i * 0.18}s"><span>${esc(x[0] || x.t)}</span><span class="rj-t">${mmss(x[1] != null ? x[1] : x.at)}</span></div>`).join('');
+    const li = (arr, d0) => arr.map((x, i) => `<div class="rj-li gx-in" style="--d:${d0 + i * 0.18}s"><span>${esc(x.me || x[2] || x[0] || x.t)}</span><span class="rj-t">${mmss(x[1] != null ? x[1] : x.at)}</span></div>`).join('');
     return `<div class="rj-wrap" style="justify-content:center">
-      <div style="text-align:center" class="gx-up"><span class="gx-title gx-skew" style="font-size:46px">Play ${p.n}</span><div class="rj-muted" style="display:flex;gap:10px;align-items:center;justify-content:center">${esc(ptitle(J.playIdx))} ${editBtn(J.playIdx)}</div></div>
+      <div style="text-align:center" class="gx-up"><div class="rj-kick">Play ${p.n} · your coach watched your minute</div><span class="gx-title gx-skew" style="font-size:42px">Here's how you played</span><div class="rj-muted" style="display:flex;gap:10px;align-items:center;justify-content:center">${esc(ptitle(J.playIdx))} ${editBtn(J.playIdx)}</div></div>
       <div class="rj-grid2">
-        <div class="rj-card te gx-in" style="--d:.15s"><h3 style="color:#3DDC97">▲ Top 3 skills</h3>${li(p.skills, 0.35)}</div>
-        <div class="rj-card or gx-in" style="--d:.3s"><h3 style="color:#FF5A1F">◆ 3 things to work on</h3>${li(p.work, 0.6)}</div></div>
-      <div class="gx-up" style="text-align:center;--d:1.1s"><button class="rj-btn gx-start" data-act="found">Start now</button></div></div>`;
+        <div class="rj-card te gx-in" style="--d:.15s"><h3 style="color:#3DDC97">▲ What you did well</h3>${li(p.skills, 0.35)}</div>
+        <div class="rj-card or gx-in" style="--d:.3s"><h3 style="color:#FF5A1F">◆ What you can do better</h3>${li(p.work, 0.6)}</div></div>
+      <div class="gx-up" style="text-align:center;--d:1.1s"><button class="rj-btn gx-start" data-act="found">▶ Start tagging</button></div></div>`;
   }
   function vBriefInt() {
     return `<div class="rj-wrap" style="justify-content:center;align-items:center;text-align:center">
