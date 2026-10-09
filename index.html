@@ -2872,8 +2872,8 @@ class Component extends DCLogic {
     return `<div class="rj-wrap" style="justify-content:center;align-items:center;text-align:center">
       <div class="rj-logo gx-in">PLAI<em>Sense</em></div>
       <div class="gx-title gx-skew gx-in" style="--d:.1s;font-size:36px">Tag your plays. <span style="color:#FF5A1F">Grow your game.</span></div>
-      <div class="gx-up" style="--d:.25s;margin:6px 0"><button class="rj-btn gx-start" data-play="${i}">▶ Start · Play ${p.n}</button></div>
-      <div class="rj-muted gx-up" style="--d:.3s;display:flex;gap:10px;align-items:center;justify-content:center">${esc(ptitle(i))} · 1:00 ${editBtn(i)}</div>
+      <div class="gx-up" style="--d:.25s;margin:6px 0"><button class="rj-btn gx-start" data-play="${i}">▶ Start tagging · 1 min</button></div>
+      <div class="rj-muted gx-up" style="--d:.3s;display:flex;gap:10px;align-items:center;justify-content:center">Play ${p.n}: ${esc(ptitle(i))} · 1 minute of gameplay ${editBtn(i)}</div>
       <div class="rj-grid5 gx-up" style="--d:.4s;width:100%;max-width:900px;grid-template-columns:repeat(6,minmax(0,1fr))">
         <button class="rj-tile" data-go="plays"><b>My plays</b><span>${playsDone()} of ${PLAYS.length} tagged</span></button>
         <button class="rj-tile" data-go="cuts" style="border-color:rgba(255,90,31,.6)"><b style="color:#FF5A1F">Play cuts</b><span>${cutsCount()} saved</span></button>
