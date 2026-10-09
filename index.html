@@ -941,17 +941,17 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </sc-if>
 
 <sc-if value="{{sheetLog}}" hint-placeholder-val="{{ false }}">
-<div class="pop" style="position: absolute; left: 122px; top: 16px; width: 600px; height: 352px; box-sizing: border-box; padding: 14px; border-radius: 16px; background: #0f1f28; border: 1.5px solid {{accent}}; box-shadow: 0 14px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; gap: 10px">
+<div class="pop" style="position: absolute; left: 116px; top: 8px; width: 650px; height: 374px; box-sizing: border-box; padding: 10px 12px; border-radius: 16px; background: #0f1f28; border: 1.5px solid {{accent}}; box-shadow: 0 14px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; gap: 8px">
 <div style="display: flex; justify-content: space-between; align-items: center">
 <div>
-<div class="hud" style="font-size: 17px; font-weight: 700">Moments log</div>
-<div style="font-size: 11px; color: rgba(238,244,246,0.6)">Tell us why each moment was fun or frustrating. +10 each.</div>
+<div class="hud" style="font-size: 16px; font-weight: 700">Your moments</div>
+<div style="font-size: 11px; color: rgba(238,244,246,0.6)">Why did this moment matter to you? +10 each.</div>
 </div>
 <button type="button" onClick="{{closeSheet}}" aria-label="Close" style="width: 36px; height: 36px; padding: 0; border: none; border-radius: 8px; background: rgba(255,255,255,0.08); cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"></path></svg></button>
 </div>
 <sc-if value="{{logAny}}" hint-placeholder-val="{{ true }}">
 <div style="display: flex; gap: 12px; flex-grow: 1; min-height: 0">
-<div style="width: 170px; flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; overflow-y: auto">
+<div style="width: 150px; flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; overflow-y: auto">
 <sc-for list="{{logRows}}" as="lr" hint-placeholder-count="3">
 <button type="button" onClick="{{lr.pick}}" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 8px; border-radius: 10px; border: 1.5px solid {{lr.border}}; background: {{lr.bg}}; cursor: pointer; text-align: left">
 <span style="width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; border: 2px solid {{lr.color}}; color: {{lr.color}}; display: flex; align-items: center; justify-content: center">
@@ -966,19 +966,34 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </sc-for>
 </div>
 <sc-if value="{{logSelOn}}" hint-placeholder-val="{{ true }}">
-<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; padding-right: 2px">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
 <div class="hud" style="font-size: 15px; font-weight: 700">{{logQ}}</div>
 <button type="button" onClick="{{watchLog}}" style="height: 32px; padding: 0 10px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; white-space: nowrap"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"></path></svg><span>Watch again</span></button>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(238,244,246,0.6)">What happened</div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px; flex-shrink: 0">
 <sc-for list="{{logReasonsList}}" as="rr" hint-placeholder-count="6">
-<button type="button" onClick="{{rr.pick}}" aria-pressed="{{rr.on}}" style="height: 34px; padding: 0 12px; border-radius: 17px; border: 1.5px solid {{rr.border}}; background: {{rr.bg}}; color: {{rr.fg}}; font-size: 13px; font-weight: 600; cursor: pointer">{{rr.text}}</button>
+<button type="button" onClick="{{rr.pick}}" aria-pressed="{{rr.on}}" style="height: 28px; padding: 0 10px; border-radius: 14px; border: 1.5px solid {{rr.border}}; background: {{rr.bg}}; color: {{rr.fg}}; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap">{{rr.text}}</button>
 </sc-for>
 </div>
-<label for="logwhy" style="font-size: 11px; color: rgba(238,244,246,0.65)">In your own words (optional)</label>
-<textarea id="logwhy" value="{{logWhy}}" onChange="{{onLogWhy}}" placeholder="e.g. I barely dodged the rocket and got the frag back" style="flex-grow: 1; min-height: 58px; resize: none; box-sizing: border-box; padding: 8px 10px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: #06121a; color: #ffffff; font-size: 14px; font-family: inherit"></textarea>
-<button type="button" onClick="{{saveLog}}" disabled="{{logSaveDisabled}}" style="height: 42px; border-radius: 11px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 700; cursor: pointer; opacity: {{logSaveOpacity}}">{{logSaveText}}</button>
+<div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(238,244,246,0.6)">Why it mattered to you</div>
+<div style="display: flex; flex-wrap: wrap; gap: 5px; flex-shrink: 0">
+<sc-for list="{{logMatterList}}" as="mm" hint-placeholder-count="5">
+<button type="button" onClick="{{mm.pick}}" aria-pressed="{{mm.on}}" style="height: 28px; padding: 0 10px; border-radius: 14px; border: 1.5px solid {{mm.border}}; background: {{mm.bg}}; color: {{mm.fg}}; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap">{{mm.text}}</button>
+</sc-for>
+</div>
+<sc-if value="{{logFriendsOn}}" hint-placeholder-val="{{ false }}">
+<input id="logfriends" value="{{logFriends}}" onChange="{{onLogFriends}}" placeholder="Tag your friends: @sam @lee" style="height: 30px; flex-shrink: 0; box-sizing: border-box; padding: 0 10px; border-radius: 8px; border: 1.5px solid #f5c451; background: #06121a; color: #ffffff; font-size: 13px; font-family: inherit">
+</sc-if>
+<div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap">
+<div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(238,244,246,0.6); margin-right: 2px">How did it hit you?</div>
+<sc-for list="{{logOnsetList}}" as="oo" hint-placeholder-count="2">
+<button type="button" onClick="{{oo.pick}}" aria-pressed="{{oo.on}}" style="height: 28px; padding: 0 10px; border-radius: 14px; border: 1.5px solid {{oo.border}}; background: {{oo.bg}}; color: {{oo.fg}}; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap">{{oo.text}}</button>
+</sc-for>
+</div>
+<textarea id="logwhy" value="{{logWhy}}" onChange="{{onLogWhy}}" placeholder="In your own words (optional)" style="min-height: 38px; flex-shrink: 0; resize: none; box-sizing: border-box; padding: 6px 10px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: #06121a; color: #ffffff; font-size: 13px; font-family: inherit"></textarea>
+<button type="button" onClick="{{saveLog}}" disabled="{{logSaveDisabled}}" style="height: 38px; flex-shrink: 0; border-radius: 11px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 700; cursor: pointer; opacity: {{logSaveOpacity}}">{{logSaveText}}</button>
 </div>
 </sc-if>
 </div>
@@ -1285,6 +1300,9 @@ const EX1R = [['unwind', 'Unwind'], ['better', 'Get better'], ['beat', 'Beat peo
 const DELIV = [['yes', 'Nailed it'], ['meh', 'Meh'], ['no', 'Missed']];
 const FUN_R = ['Great shot', 'Close fight', 'Movement', 'Surprise', 'Looks cool', 'Won the duel'];
 const FRU_R = ['Unfair', 'Confusing', 'Boring', 'Controls', "Couldn't see it", 'Lost the duel'];
+const FUN_M = ['🏆 Proud of it', '⭐ Big moment', '😮 Surprised me', '📸 Worth sharing', '👥 Friends were there'];
+const FRU_M = ['🙋 My mistake', '⚖️ Felt unfair', '🔁 Keeps happening', '💥 Cost me the fight', '👥 Friends were there'];
+const ONSET = ['⚡ Instant', '📈 Built up'];
 const QB = {
   EX1: { q: 'Why did you play this game?', sub: 'Pick up to 2', fmt: 'cn', max: 2, opts: EX1R, tag: 'EXP' },
   EX2: { q: 'How good are you at games like this?', fmt: 'c1', opts: [['1', 'Newbie'], ['2', 'Decent'], ['3', 'Good'], ['4', 'Very good'], ['5', 'Elite']], tag: 'EXP' },
@@ -1922,18 +1940,22 @@ class Component extends DCLogic {
   openLog = () => {
     const pend = this.state.markers.filter((k) => k.kind !== 'emo' && !k.done);
     const first = pend[0] || this.state.markers.filter((k) => k.kind !== 'emo')[0];
-    this.setState({ sheet: 'log', logSel: first ? first.id : null, logWhy: first ? first.why : '', logReasons: first ? first.reasons.slice() : [] });
+    this.setState({ sheet: 'log', logSel: first ? first.id : null, logWhy: first ? first.why : '', logReasons: first ? first.reasons.filter((x) => !String(x).startsWith('friends:')) : [], logFriends: first ? ((first.reasons.find((x) => String(x).startsWith('friends:')) || '').slice(8)) : '' });
   };
-  selectLog(k) { this.setState({ logSel: k.id, logWhy: k.why, logReasons: k.reasons.slice() }); }
+  selectLog(k) { this.setState({ logSel: k.id, logWhy: k.why, logReasons: k.reasons.filter((x) => !String(x).startsWith('friends:')), logFriends: (k.reasons.find((x) => String(x).startsWith('friends:')) || '').slice(8) }); }
   toggleReason(r) { this.setState((s) => ({ logReasons: s.logReasons.includes(r) ? s.logReasons.filter((x) => x !== r) : s.logReasons.concat([r]) })); }
+  pickOnset(o) { this.setState((s) => { const cur = 'onset:' + o; const rest = s.logReasons.filter((x) => !String(x).startsWith('onset:')); return { logReasons: s.logReasons.includes(cur) ? rest : rest.concat([cur]) }; }); }
+  onLogFriends = (e) => { this.setState({ logFriends: e.target.value }); };
   onLogWhy = (e) => { this.setState({ logWhy: e.target.value }); };
   saveLog = () => {
     const s = this.state; const k = s.markers.find((m) => m.id === s.logSel);
     if (!k || (!s.logReasons.length && !(s.logWhy || '').trim())) return;
     const wasDone = k.done;
-    const markers = s.markers.map((m) => m.id === k.id ? Object.assign({}, m, { reasons: s.logReasons.slice(), why: (s.logWhy || '').trim(), done: true }) : m);
+    const fr = String(s.logFriends || '').split(/[\s,]+/).filter(Boolean).map((x) => x[0] === '@' ? x : '@' + x).join(' ');
+    const rs = s.logReasons.slice().concat(fr && s.logReasons.some((x) => String(x).includes('Friends were there')) ? ['friends:' + fr] : []);
+    const markers = s.markers.map((m) => m.id === k.id ? Object.assign({}, m, { reasons: rs, why: (s.logWhy || '').trim(), done: true }) : m);
     const next = markers.find((m) => m.kind !== 'emo' && !m.done);
-    this.setState({ markers, logSel: next ? next.id : k.id, logWhy: next ? next.why : (s.logWhy || '').trim(), logReasons: next ? next.reasons.slice() : s.logReasons.slice() });
+    this.setState({ markers, logSel: next ? next.id : k.id, logWhy: next ? next.why : (s.logWhy || '').trim(), logReasons: next ? next.reasons.slice() : s.logReasons.slice(), logFriends: next ? '' : s.logFriends });
     if (!wasDone) this.award(10, 'explained');
     this.backToMain('explain');
   };
@@ -2337,7 +2359,7 @@ class Component extends DCLogic {
       gunX: f1(520 + gx), gunY: f1(238 + gy),
       health, armor, ammo: Math.max(0, 40 - shots * 6),
       kf1: !hasVideo && (kfA || kfB), kfName: kfB ? seg.b : seg.a,
-      boxes, openDets, noOpen: openDets.length === 0, vidChips: hasVideo && !s.editing && tagUI && !s.flow && s.phase === 'play' ? openDets.slice(0, 2) : [], tagUI, intUI, intHintOn: this.journey && s.round === 'intensity' && s.phase === 'play', boredOn: this.journey && intUI && s.phase === 'play' && !s.flow, tapBored: this.tapBored, boredScale: s.boredPulse ? '0.92' : '1', boredRing: s.boredPulse ? 8 : 0, skipRound: this.skipRound, goMenu: this.goMenu, menuBtnOn: this.journey && s.phase !== 'idle', editBtnOn: this.journey && s.phase === 'play' && !s.flow, openEdit: this.openEdit, chipsTop: this.journey && s.phase === 'play' ? 92 : 58, railOp: tagUI ? '1' : '0.3', railPe: tagUI ? 'auto' : 'none', railLockOn: !tagUI && s.phase === 'play', roundBadgeOn: this.journey && s.phase === 'play' && !s.flow && !sheet, roundCol: s.round === 'tag' ? '#3DDC97' : accent, roundTitle: s.round === 'tag' ? 'ROUND 2 · TAG IT' : 'ROUND 1 · INTENSITY', roundHint: s.round === 'tag' ? (s.vt < 12 ? 'Tap Fun, Frustration or Emotion when you feel it' : 'Tag what you feel') : 'Heart races? Intensity · Drags? Bored',
+      boxes, openDets, noOpen: openDets.length === 0, vidChips: hasVideo && !s.editing && tagUI && !s.flow && s.phase === 'play' ? openDets.slice(0, 2) : [], tagUI, intUI, intHintOn: this.journey && s.round === 'intensity' && s.phase === 'play', boredOn: this.journey && intUI && s.phase === 'play' && !s.flow, tapBored: this.tapBored, boredScale: s.boredPulse ? '0.92' : '1', boredRing: s.boredPulse ? 8 : 0, skipRound: this.skipRound, goMenu: this.goMenu, menuBtnOn: this.journey && s.phase !== 'idle', editBtnOn: this.journey && s.phase === 'play' && !s.flow && !sheet, openEdit: this.openEdit, chipsTop: this.journey && s.phase === 'play' ? 92 : 58, railOp: tagUI ? '1' : '0.3', railPe: tagUI ? 'auto' : 'none', railLockOn: !tagUI && s.phase === 'play', roundBadgeOn: this.journey && s.phase === 'play' && !s.flow && !sheet, roundCol: s.round === 'tag' ? '#3DDC97' : accent, roundTitle: s.round === 'tag' ? 'ROUND 2 · TAG IT' : 'ROUND 1 · INTENSITY', roundHint: s.round === 'tag' ? (s.vt < 12 ? 'Tap Fun, Frustration or Emotion when you feel it' : 'Tag what you feel') : 'Heart races? Intensity · Drags? Bored',
       timer: mmss(Math.min(DUR, vt)),
       ptsLabel: fmt(this.disp == null ? s.pts : this.disp),
       bumpCls: s.bump == null ? '' : s.bump ? 'bumpA' : 'bumpB',
@@ -2387,6 +2409,9 @@ class Component extends DCLogic {
       logChipText: logPend > 0 ? logPend + ' moment' + (logPend > 1 ? 's' : '') + ' to explain' : 'Moments log',
       logRows: logItems.map((k) => ({ time: mmss(k.t), fun: k.kind === 'fun', notfun: k.kind === 'notfun', color: k.kind === 'fun' ? '#3DDC97' : '#ff6b6b', label: k.kind === 'fun' ? 'Fun' : 'Frustration', status: k.done ? '✓ explained' : 'explain', stColor: k.done ? '#3DDC97' : 'rgba(238,244,246,0.6)', bg: s.logSel === k.id ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.04)', border: s.logSel === k.id ? accent : 'transparent', pick: () => this.selectLog(k) })),
       logSelOn: !!selK, logQ: selK ? (selK.kind === 'fun' ? 'What made 0:' + String(Math.floor(selK.t)).padStart(2, '0') + ' fun?' : 'What frustrated you at 0:' + String(Math.floor(selK.t)).padStart(2, '0') + '?') : '',
+      logMatterList: (selK ? (selK.kind === 'fun' ? FUN_M : FRU_M) : []).map((r0) => { const r = 'matter:' + r0; const on = logR.includes(r); const col = r0.includes('Friends') ? '#f5c451' : accent; return { text: r0, on, bg: on ? col : 'rgba(255,255,255,0.05)', fg: on ? '#0b1419' : '#eef4f6', border: on ? col : 'rgba(255,255,255,0.2)', pick: () => this.toggleReason(r) }; }),
+      logOnsetList: ONSET.map((o) => { const on = logR.includes('onset:' + o); return { text: o, on, bg: on ? '#7de8ff' : 'rgba(255,255,255,0.05)', fg: on ? '#0b1419' : '#eef4f6', border: on ? '#7de8ff' : 'rgba(255,255,255,0.2)', pick: () => this.pickOnset(o) }; }),
+      logFriendsOn: logR.some((x) => String(x).includes('Friends were there')), logFriends: s.logFriends || '', onLogFriends: this.onLogFriends,
       logReasonsList: (selK ? (selK.kind === 'fun' ? FUNR : NOTR) : []).map((r) => ({ text: r, on: logR.includes(r), bg: logR.includes(r) ? accent : 'rgba(255,255,255,0.05)', fg: logR.includes(r) ? '#0b1419' : '#eef4f6', border: logR.includes(r) ? accent : 'rgba(255,255,255,0.2)', pick: () => this.toggleReason(r) })),
       logWhy: s.logWhy || '', onLogWhy: this.onLogWhy, saveLog: this.saveLog, watchLog: this.watchLog,
       logSaveDisabled: !(logR.length || (s.logWhy || '').trim()), logSaveOpacity: (logR.length || (s.logWhy || '').trim()) ? '1' : '0.45',
