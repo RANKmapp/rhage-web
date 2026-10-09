@@ -2934,12 +2934,18 @@ class Component extends DCLogic {
   }
   function vHype() {
     const p = PLAYS[J.playIdx];
-    return `<div class="rj-wrap" style="justify-content:center;align-items:center;text-align:center">
-      <div class="rj-kick gx-up">Intensity done</div>
-      <div class="gx-title gx-skew gx-up" style="--d:.1s;font-size:44px">Your best scenes · <span style="color:#FF5A1F">15 sec max</span></div>
-      <div class="gx-mid gx-up" style="--d:.15s;font-size:19px;margin-top:-6px">Your Play cut: the shortest version of your Play, only the best moments</div>
-      <div class="gx-up" style="--d:.2s">${cutVid(p, 'width:min(360px,70vw);max-height:150px;border:1.5px solid #FF5A1F;box-shadow:0 0 24px rgba(255,90,31,.5);display:block')}</div>
-      <div class="rj-row gx-up" style="--d:.35s;justify-content:center"><button class="rj-btn2" data-share="${J.playIdx}">Share Play cut</button><button class="rj-btn2" data-desc="${J.playIdx}">✎ Edit</button><button class="rj-btn gx-start" data-act="tagnext" style="font-size:24px;padding:10px 34px">Tag it · round 2</button></div></div>`;
+    const ex = (ic, col, bg, what, at, note) => `<div style="display:flex;align-items:center;gap:10px;background:#0b1820;border:1px solid ${col}55;padding:4px 8px;text-align:left"><span style="width:28px;height:28px;border-radius:50%;background:${bg};color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none">${ic}</span><span style="flex:1;min-width:0"><b style="color:${col}">${what}</b> <span class="rj-muted">${at}</span><br><span style="font-size:13px;color:#c9d6db">${note}</span></span></div>`;
+    return `<div class="rj-wrap" style="justify-content:center;align-items:center;text-align:center;gap:8px">
+      <div class="rj-kick gx-up" style="color:#3DDC97">Part 2 of 2 · your highlights</div>
+      <div class="gx-title gx-skew gx-up" style="--d:.1s;font-size:34px;line-height:1.05">Review your highlights.<br><span style="color:#3DDC97">Tell your coach what you felt.</span></div>
+      <div class="gx-up" style="--d:.2s;display:grid;grid-template-columns:220px minmax(0,1fr);align-items:center;width:100%;max-width:880px;gap:12px">
+        <video src="${p.reel}" autoplay muted loop playsinline style="width:100%;height:124px;object-fit:cover;background:#000;border:1.5px solid #3DDC97;display:block"></video>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="rj-muted" style="text-align:left;grid-column:span 2;font-size:13px">For example, you tag:</div>
+          ${ex('☺', '#3DDC97', '#1f9e6a', 'Fun', '0:09', 'Clean frag in the close fight')}
+          ${ex('☹', '#ff6b6b', '#c94848', 'Frustration', '0:11', 'Hit right after my frag')}
+          ${ex('♥', '#ff5c7a', '#c43d5c', 'Emotion: Relief', '0:26', 'Health back just in time')}
+          ${ex('✓', '#7de8ff', '#2a6f80', 'Coach label', '0:07', '"Rocket hit": right or wrong?')}</div></div>
+      <div class="rj-row gx-up" style="--d:.35s;justify-content:center"><button class="rj-btn gx-start" data-act="tagnow" style="font-size:24px;padding:10px 34px">▶ Review your highlights</button><button class="rj-btn2" data-share="${J.playIdx}">Share Play cut</button>${editBtn(J.playIdx, 1)}</div></div>`;
   }
   const editBtn = (i, big) => `<button class="rj-back rj-edit" data-desc="${i}" aria-label="Edit name and description"${big ? ' style="font-size:16px;padding:7px 16px"' : ''}>✎ Edit</button>`;
   J.openEdit = (paused) => { J.editPaused = !!paused; J.modalBack = null; J.modal = 'describe'; J.modalPlay = J.playIdx; paint(); };
@@ -3204,6 +3210,7 @@ class Component extends DCLogic {
     else if (a === 'tagf') { J.tagOpen = !J.tagOpen; paint(); setTimeout(() => { const f = $('rj-friends'); if (f) f.focus(); }, 30); }
     else if (a === 'tagok') { let v = (($('rj-friends') || {}).value || '').trim(); v = normFriends(v); pset(J.modalPlay, { friends: v }); try { R().log && R().log({ type: 'tag_friends', n: v ? v.split(' ').length : 0, card: J.modalPlay }); } catch (e) {} J.tagOpen = false; paint(); }
     else if (a === 'tagnext') { J.hypeSeen = true; paint(); }
+    else if (a === 'tagnow' && c && !J.counting) { J.hypeSeen = true; try { c.unlockSound(); } catch (e) {} countdown(); }
     else if (a === 'cont' && !$('rj-desc')) { J.modal = null; J.hypeSeen = true; paint(); }
     else if (a === 'dsave' || a === 'dshare' || (a === 'cont' && $('rj-desc'))) { const t = ($('rj-desc') || {}).value || ''; const nm = (($('rj-title') || {}).value || '').trim(); const frEl = $('rj-fr'); const patch = { desc: t.trim() }; if (nm) patch.title = nm; if (frEl) patch.friends = normFriends(frEl.value); pset(J.modalPlay, patch); if (frEl && patch.friends) { try { R().log && R().log({ type: 'tag_friends', n: patch.friends.split(' ').length, card: J.modalPlay, where: J.editPaused ? 'in_game' : 'edit' }); } catch (e) {} } try { R().log && R().log({ type: 'description', text: t.trim(), title: nm, card: J.modalPlay }); } catch (e) {} if (a === 'cont') { J.modal = null; J.modalBack = null; J.hypeSeen = true; paint(); return; } if (a === 'dshare') { J.modalBack = null; J.editPaused = false; J.modal = 'share'; paint(); } else closeModal(); }
     else if (a === 'dredo') { const ta = $('rj-desc'); if (ta) ta.value = draft(J.modalPlay); }
