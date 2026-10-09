@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta name="rh-build" content="1791542102"><script>(function(){var B="1791542102";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
+<!doctype html><html lang="en"><head><meta name="rh-build" content="1791542516"><script>(function(){var B="1791542516";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -384,7 +384,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <div style="position: absolute; left: 0; top: 0; width: 844px; height: 390px; pointer-events: none; box-shadow: inset 0 0 0 3px {{accent}}, inset 0 0 60px rgba(255,90,31,0.25)"></div>
 <div class="hud" style="position: absolute; left: 120px; top: 50px; display: flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 8px; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; pointer-events: none">
 <svg width="18" height="14" viewBox="0 0 24 18" aria-hidden="true"><path d="M1 1l10 8-10 8zM12 1l10 8-10 8z" fill="currentColor"></path></svg>
-<span>2× FAST-FORWARD</span>
+<span>{{fastLabel}}</span>
 </div>
 </sc-if>
 <sc-if value="{{aheadOn}}" hint-placeholder-val="{{ false }}">
@@ -1496,7 +1496,9 @@ class Component extends DCLogic {
     this.raf = requestAnimationFrame(loop);
   }
   componentWillUnmount() { cancelAnimationFrame(this.raf); clearTimeout(this.tt); this.endListen(); }
-  nominal(s) { return s.speedSel || 1; }
+  inHighlight(t) { return (PEAKS || []).some((p) => p[1] >= 50 && t >= p[0] - 3 && t <= p[0] + 3); }
+  hlMode(s) { return this.journey && s.round === 'tag' && (s.speedSel || 1) === 1 && (PEAKS || []).length > 0; }
+  nominal(s) { if (this.hlMode(s) && !this.inHighlight(s.vt)) return 4; return s.speedSel || 1; }
   slowRate() { const v = this.props.autoSlowRate ?? "1×"; return parseFloat(v) || 1; }
   episode(t) {
     if (!(this.props.autoSlow ?? false)) return -1;
@@ -1929,7 +1931,9 @@ class Component extends DCLogic {
     if (this.state.phase === 'intro') return;
     const id = 'm' + (++this.rid);
     this.setState((s) => ({ markers: s.markers.concat([{ id, t: t == null ? s.vt : t, kind, label, reasons: [], why: '', done: false }]) }));
+    return id;
   }
+  openCardFor(id) { if (!this.journey || !id) return; setTimeout(() => this.setState({ sheet: 'log', logSel: id, logWhy: '', logReasons: [], logFriends: '' }), 350); }
   fly(kind) {
     const t = this.state.vt;
     const mx = 10 + (t / DUR) * SW, my = 327;
@@ -1958,6 +1962,7 @@ class Component extends DCLogic {
     this.setState({ markers, logSel: next ? next.id : k.id, logWhy: next ? next.why : (s.logWhy || '').trim(), logReasons: next ? next.reasons.slice() : s.logReasons.slice(), logFriends: next ? '' : s.logFriends });
     if (!wasDone) this.award(10, 'explained');
     this.backToMain('explain');
+    if (this.journey && !next) this.setState({ sheet: null });
   };
   watchLog = () => {
     const k = this.state.markers.find((m) => m.id === this.state.logSel); if (!k) return;
@@ -2009,8 +2014,8 @@ class Component extends DCLogic {
     this.blitzPatch((x) => ({ step: 4, t0: performance.now(), got: x.got + (full ? 25 : 0), full }));
     this.setState((st) => ({ blitzResult: { pick: b.pick.slice(), sat: Object.assign({}, b.sat), keep: b.keep, meters: Object.assign({}, b.meters) }, ans: Object.assign({}, st.ans, { BB1: b.meters.BB1, BB2: b.meters.BB2, BB3: b.meters.BB3, BB4: b.meters.BB4, BB7: b.keep }) }));
   }
-  markFun = () => { if (this.state.phase === 'intro') return; this.fly('fun'); this.addMarker('fun', 'Fun'); this.award(5, 'fun moment'); };
-  markNotFun = () => { if (this.state.phase === 'intro') return; this.fly('notfun'); this.addMarker('notfun', 'Frustration'); this.award(5, 'frustration'); };
+  markFun = () => { if (this.state.phase === 'intro') return; this.fly('fun'); const id = this.addMarker('fun', 'Fun'); this.award(5, 'fun moment'); this.openCardFor(id); };
+  markNotFun = () => { if (this.state.phase === 'intro') return; this.fly('notfun'); const id = this.addMarker('notfun', 'Frustration'); this.award(5, 'frustration'); this.openCardFor(id); };
   pickEmo(name) { this.addMarker('emo', name, this.state.emoTime); this.recentEmos = [name].concat(this.recentEmos.filter((x) => x !== name)).slice(0, 4); this.setState({ sheet: null, emoGroup: null, emoOther: '' }); this.award(8, name.toLowerCase()); }
   pickEmoGroup(g) { if (g.k === 'shock') { this.pickEmo('Surprise'); return; } this.setState({ emoGroup: g.k }); }
   submitQ = () => {
@@ -2373,7 +2378,7 @@ class Component extends DCLogic {
       quickLabels: ['Player character', 'Weapon', 'Item', 'Projectile', 'Effect', 'Nothing'].map((q) => ({ text: q, pick: () => this.setState({ editText: q }) })),
       pausedOn: s.phase === 'play' && s.stopped && !s.editing && !s.sheet && !s.drag && !s.note && !s.place,
       flyers: (s.flyers || []).map((q) => ({ css: '--tx:' + f1(q.tx) + 'px;--ty:' + f1(q.ty) + 'px', fun: q.kind === 'fun', notfun: q.kind === 'notfun', color: q.kind === 'fun' ? '#3DDC97' : '#ff6b6b' })),
-      instantReplay: this.instantReplay, restartClip: this.restartClip, nextHighlight: this.nextHighlight, rwText: s.rwStart ? 'REWINDING TO START' : 'REWINDING 10 SECONDS', fastOn, aheadOn,
+      instantReplay: this.instantReplay, restartClip: this.restartClip, nextHighlight: this.nextHighlight, rwText: s.rwStart ? 'REWINDING TO START' : 'REWINDING 10 SECONDS', fastOn, aheadOn, fastLabel: this.hlMode(s) && rateN >= 4 ? 'FAST TO NEXT HIGHLIGHT' : rateN + '× FAST-FORWARD',
       speeds: [2, 1, 0.5].map((n) => { const on = (s.speedSel || 1) === n; return { label: (n === 0.5 ? '0.5' : String(n)) + '×', on, aria: 'Play at ' + n + ' times speed', bg: on ? accent : 'transparent', fg: on ? '#0b1419' : '#eef4f6', pick: () => this.setSpeed(n) }; }),
       padRing: f1(Math.min(18, (inten / 100) * 18)), padScale: s.ripples.length ? '1.05' : '1', padPulse: '',
       
