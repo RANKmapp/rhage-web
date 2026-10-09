@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta name="rh-build" content="1791542837"><script>(function(){var B="1791542837";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
+<!doctype html><html lang="en"><head><meta name="rh-build" content="1791551696"><script>(function(){var B="1791551696";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -404,13 +404,13 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 
 <sc-if value="{{deadOn}}" hint-placeholder-val="{{ false }}">
 <div style="position: absolute; left: 0; top: 0; width: 844px; height: 390px; pointer-events: none; background: radial-gradient(ellipse at center, rgba(90,0,0,0.35), rgba(40,0,0,0.85)); backdrop-filter: grayscale(1); -webkit-backdrop-filter: grayscale(1); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
-<div class="hud bang" style="font-size: 30px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; text-shadow: 0 2px 8px #000">FRAGGED BY <span style="color: #ffb0c8">{{deadBy}}</span></div>
-<div class="hud" style="font-size: 13px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75)">RESPAWNING…</div>
+<div class="hud bang" style="font-size: 30px; font-weight: 700; letter-spacing: 0.08em; color: #ffffff; text-shadow: 0 2px 8px #000">KNOCKED OUT BY <span style="color: #ffb0c8">{{deadBy}}</span></div>
+<div class="hud" style="font-size: 13px; letter-spacing: 0.2em; color: rgba(255,255,255,0.75)">BACK IN A MOMENT…</div>
 </div>
 </sc-if>
 
 <sc-if value="{{kf1}}" hint-placeholder-val="{{ false }}">
-<div class="hud" style="position: absolute; left: 50%; top: 52px; transform: translateX(-50%); font-size: 13px; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px #000; pointer-events: none"><span style="color: #6f9bff">You fragged</span> <span style="color: #ffffff">{{kfName}}</span></div>
+<div class="hud" style="position: absolute; left: 50%; top: 52px; transform: translateX(-50%); font-size: 13px; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px #000; pointer-events: none"><span style="color: #6f9bff">You knocked out</span> <span style="color: #ffffff">{{kfName}}</span></div>
 </sc-if>
 
 <sc-if value="{{menuBtnOn}}" hint-placeholder-val="{{ false }}">
@@ -1054,7 +1054,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <div style="position: absolute; left: 0; top: 0; width: 844px; height: 390px; background: rgba(4,10,14,0.8); display: flex; align-items: center; justify-content: center">
 <div class="pop" style="width: 460px; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #0f1f28; border: 1.5px solid rgba(98,160,176,0.35); display: flex; flex-direction: column; gap: 14px">
 <div>
-<div style="font-size: 11px; letter-spacing: 0.14em; color: {{accent}}; font-weight: 700">PLAISENSE · CLIP 1 · XONOTIC · 1:00</div>
+<div style="font-size: 11px; letter-spacing: 0.14em; color: {{accent}}; font-weight: 700">PLAISENSE · CLIP 1 · 1:00</div>
 <div class="hud" style="font-size: 22px; font-weight: 700; margin-top: 4px">Watch the tutorial</div>
 <div style="font-size: 13px; line-height: 1.45; color: rgba(238,244,246,0.75); margin-top: 6px">Five quick steps show you how to control the clip, mark fun and frustrating moments, check what the system spotted and earn points. It takes about 30 seconds, at your own pace.</div>
 </div>
@@ -1182,7 +1182,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <div style="position: absolute; left: 0; top: 0; width: 844px; height: 390px; background: rgba(4,10,14,0.8); display: flex; align-items: center; justify-content: center">
 <div class="pop" style="width: 460px; box-sizing: border-box; padding: 22px; border-radius: 18px; background: #0f1f28; border: 1.5px solid rgba(98,160,176,0.35); display: flex; flex-direction: column; gap: 14px">
 <div>
-<div style="font-size: 11px; letter-spacing: 0.14em; color: {{accent}}; font-weight: 700">PLAISENSE · CLIP 1 · XONOTIC · 1:00</div>
+<div style="font-size: 11px; letter-spacing: 0.14em; color: {{accent}}; font-weight: 700">PLAISENSE · CLIP 1 · 1:00</div>
 <div class="hud" style="font-size: 22px; font-weight: 700; margin-top: 4px">Annotate your gameplay</div>
 </div>
 <button type="button" onClick="{{replayTut}}" style="height: 34px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: transparent; font-size: 13px; font-weight: 700; cursor: pointer">Watch the tutorial again</button>
@@ -1264,9 +1264,9 @@ const SEGS = [
 ];
 const BASE = [
   { id: 'd1', kind: 'Player character', who: 'a', conf: 94, t0: 1.1, t1: 2.6, track: 'b1' },
-  { id: 'd2', kind: 'Weapon', name: 'Vortex rifle (yours)', conf: 97, t0: 2.0, t1: 4.2, track: 'gun' },
-  { id: 'd3', kind: 'Event', name: 'Frag', conf: 88, t0: 2.65, t1: 3.9, track: 'boom1' },
-  { id: 'd4', kind: 'Item', name: 'Armor shard', conf: 71, t0: 3.7, t1: 5.2, track: 'armor' },
+  { id: 'd2', kind: 'Action', name: 'Vortex rifle (yours)', conf: 97, t0: 2.0, t1: 4.2, track: 'gun' },
+  { id: 'd3', kind: 'Event', name: 'Win', conf: 88, t0: 2.65, t1: 3.9, track: 'boom1' },
+  { id: 'd4', kind: 'Item', name: 'Pickup', conf: 71, t0: 3.7, t1: 5.2, track: 'armor' },
   { id: 'd5', kind: 'Player character', who: 'b', conf: 91, t0: 5.7, t1: 8.0, track: 'b2' },
   { id: 'd6', kind: 'Projectile', name: 'Rocket', conf: 64, t0: 6.45, t1: 7.25, track: 'rocket' }
 ];
@@ -1298,8 +1298,8 @@ const B7 = [['-3', 'Way too easy'], ['-2', 'Too easy'], ['-1', 'Bit easy'], ['0'
 const M10 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => [String(n), String(n)]);
 const EX1R = [['unwind', 'Unwind'], ['better', 'Get better'], ['beat', 'Beat people'], ['new', 'See something new'], ['mates', 'Play with mates'], ['action', 'Pure action'], ['world', 'Get lost in a world'], ['kill', 'Kill time']];
 const DELIV = [['yes', 'Nailed it'], ['meh', 'Meh'], ['no', 'Missed']];
-const FUN_R = ['Great shot', 'Close fight', 'Movement', 'Surprise', 'Looks cool', 'Won the duel'];
-const FRU_R = ['Unfair', 'Confusing', 'Boring', 'Controls', "Couldn't see it", 'Lost the duel'];
+const FUN_R = ['Great move', 'Close call', 'Smooth control', 'Surprise', 'Looks amazing', 'Beat the challenge'];
+const FRU_R = ['Unfair', 'Confusing', 'Boring', 'Controls', "Couldn't see it", 'Failed the challenge'];
 const FUN_M = ['🏆 Proud of it', '⭐ Big moment', '😮 Surprised me', '📸 Worth sharing', '👥 Friends were there'];
 const FRU_M = ['🙋 My mistake', '⚖️ Felt unfair', '🔁 Keeps happening', '💥 Cost me the fight', '👥 Friends were there'];
 const ONSET = ['⚡ Instant', '📈 Built up'];
@@ -1309,14 +1309,14 @@ const QB = {
   EX3: { q: 'When you played, how much challenge were you looking for?', fmt: 'c1', opts: [['-2', 'Relaxed · easy wins'], ['0', 'Balanced · some tough fights'], ['1', 'Tough · push me hard'], ['2', 'Brutal · barely survive']], tag: 'EXP' },
   EX4: { q: 'Before you played, how much fun did you expect?', fmt: 'm10', left: 'Meh', right: "Couldn't wait", tag: 'EXP' },
   EX5: { q: 'Had you played this game before this match?', fmt: 'c1', opts: [['first', 'No, first time'], ['few', 'A few times'], ['regular', "Yes, I'm a regular"]], tag: 'EXP' },
-  EX6: { q: "One thing you're hoping for today?", sub: 'Optional', fmt: 'text', ph: 'e.g. land more rocket frags', tag: 'EXP' },
+  EX6: { q: "One thing you're hoping for today?", sub: 'Optional', fmt: 'text', ph: 'e.g. pull off more big moments', tag: 'EXP' },
   OC1: { q: 'That death felt…', fmt: 'c1', opts: [['deserved', 'Deserved'], ['cheap', 'Cheap'], ['random', 'Random'], ['noidea', 'No idea what happened']], tag: 'F' },
   OC2: { q: 'What got you?', fmt: 'c1', opts: [['see', "Couldn't see it coming"], ['controls', 'Controls let me down'], ['what', "Didn't know what to do"], ['rule', "Didn't know that rule"], ['spawn', 'Spawned into it'], ['lag', 'Lag or bad luck']], tag: 'F-design' },
-  OC3: { q: 'What got you?', fmt: 'c1', opts: [['aim', 'Their aim'], ['move', 'Their movement'], ['plan', 'Their plan'], ['mistake', 'My mistake']], tag: 'F-skill' },
+  OC3: { q: 'What got you?', fmt: 'c1', opts: [['aim', 'Their skill'], ['move', 'Their movement'], ['plan', 'Their plan'], ['mistake', 'My mistake']], tag: 'F-skill' },
   OC4: { q: 'Run it back?', fmt: 'c1', opts: [['again', 'Yes, again!'], ['meh', 'Meh'], ['done', "I'm done"]], tag: 'BEH' },
-  OW1: { q: 'That frag felt…', fmt: 'c1', opts: [['earned', 'Earned it'], ['lucky', 'Lucky'], ['easy', 'Too easy']], tag: 'E-mastery' },
-  OW2: { q: 'What did it?', fmt: 'c1', opts: [['aim', 'My aim'], ['move', 'My movement'], ['plan', 'My plan'], ['timing', 'My timing'], ['their', 'Their mistake']], tag: 'E-mastery' },
-  PC1: { q: 'Scorcher is back. Do you win this one?', fmt: 'c1', opts: [['0', 'No chance'], ['1', 'Unlikely'], ['2', '50/50'], ['3', 'Likely'], ['4', 'Easy win']], tag: 'EXP' },
+  OW1: { q: 'That win felt…', fmt: 'c1', opts: [['earned', 'Earned it'], ['lucky', 'Lucky'], ['easy', 'Too easy']], tag: 'E-mastery' },
+  OW2: { q: 'What did it?', fmt: 'c1', opts: [['aim', 'My precision'], ['move', 'My movement'], ['plan', 'My plan'], ['timing', 'My timing'], ['their', 'Their mistake']], tag: 'E-mastery' },
+  PC1: { q: 'Challenge ahead. Do you make it?', fmt: 'c1', opts: [['0', 'No chance'], ['1', 'Unlikely'], ['2', '50/50'], ['3', 'Likely'], ['4', 'Easy win']], tag: 'EXP' },
   CS1: { q: 'Overall, the challenge was…', fmt: 'b7', tag: 'F-skill' },
   CS4: { q: 'When I lost, it felt out of my hands.', fmt: 'a5', tag: 'F-unprod' },
   EF1: { q: 'Fun overall', fmt: 'm10', left: 'Bored', right: 'Loving it', tag: 'E' },
@@ -1326,14 +1326,14 @@ const QB = {
   LK1: { q: "I'd play this again tomorrow.", fmt: 'a5', tag: 'E-play' },
   GO1: { q: 'I always knew what I was meant to be doing.', fmt: 'a5', tag: 'D+' },
   RU2: { q: 'The rules felt fair.', fmt: 'a5', tag: 'D+' },
-  CT2: { q: 'I fought the controls more than the enemies.', fmt: 'a5', tag: 'D-' },
+  CT2: { q: 'I fought the controls more than the game.', fmt: 'a5', tag: 'D-' },
   AG1: { q: 'What happened was down to me, not luck.', fmt: 'a5', tag: 'E-mastery' },
   PR1: { q: 'I could feel myself getting better.', fmt: 'a5', tag: 'E-mastery' },
   FR1: { q: 'I could play my own way.', fmt: 'a5', tag: 'E-play' },
   XP1: { q: 'I wanted to see what was round the next corner.', fmt: 'a5', tag: 'E-play' },
   AV1: { q: 'It looked great.', fmt: 'a5', tag: 'E-play' },
   PA2: { q: 'There were boring stretches.', fmt: 'a5', tag: 'D-' },
-  MF1: { q: 'The weapons, pickups and moves actually mattered.', fmt: 'a5', tag: 'E-play' },
+  MF1: { q: 'My choices and moves actually mattered.', fmt: 'a5', tag: 'E-play' },
   CS3: { q: 'When I lost, I knew what to do better next time.', fmt: 'a5', tag: 'GROW' },
   CS5: { q: 'I got better during this session.', fmt: 'a5', tag: 'E-mastery' },
   CT1: { q: 'The controls did exactly what I wanted.', fmt: 'a5', tag: 'D+' },
@@ -1347,20 +1347,20 @@ const QB = {
 };
 const ROT = ['LK1', 'GO1', 'CS3', 'PR1', 'CT2', 'FR1', 'AG1', 'PA2', 'XP1', 'CS5', 'RU2', 'AV1', 'MF1', 'CT1', 'AV3', 'CS6'];
 const FCQ = [
-  ['FC1', ['mastery', 'Pull off an impossible shot'], ['discovery', 'Find a hidden room']],
+  ['FC1', ['mastery', 'Pull off an impossible move'], ['discovery', 'Find a hidden room']],
   ['FC2', ['competition', 'Top the scoreboard'], ['completion', 'Finish every challenge']],
   ['FC3', ['fantasy', 'Lose myself in the world'], ['strategy', 'Figure out the perfect strategy']],
   ['FC4', ['challenge', 'A brutal fight I barely win'], ['action', 'A chaotic fight with explosions everywhere']],
   ['FC5', ['social', 'Play with mates'], ['power', 'Get stronger and gear up']],
   ['FC6', ['thrill', 'Feel my heart racing'], ['story', 'Find out what happens next']],
   ['FC7', ['aesthetic', 'A stunning-looking world'], ['competition', "Beat a friend's score"]],
-  ['FC8', ['mastery', 'Master one weapon perfectly'], ['action', 'Blow everything up']]
+  ['FC8', ['mastery', 'Master one skill perfectly'], ['action', 'Blow everything up']]
 ];
 FCQ.forEach(([id, a, b]) => { QB[id] = { q: 'Pick one', fmt: 'fc', opts: [a, b], tag: 'MOT' }; });
 const FLOWS = {
   expect: { tag: 'EXPECTATION CHECK', color: '#FF5A1F', full: true },
-  win: { tag: 'NICE FRAG!', color: '#3DDC97', full: false },
-  death: { tag: 'YOU GOT FRAGGED', color: '#D93B3B', full: false },
+  win: { tag: 'NICE ONE!', color: '#3DDC97', full: false },
+  death: { tag: 'TOUGH MOMENT', color: '#D93B3B', full: false },
   confidence: { tag: 'CALL IT', color: '#f5c451', full: false },
   debrief: { tag: 'DEBRIEF', color: '#FF5A1F', full: true },
   profile: { tag: 'PLAYER DNA', color: '#B06CFF', full: true }
@@ -1379,55 +1379,55 @@ const REWARDS = [
 let CLIP_URL = 'media/play-3.mp4';
 let REEL_URL = 'media/highlight-reel.mp4';
 let DETS_V = [
-  { id: 'n1', seg: 0, kind: 'Event', name: 'Rocket explosion', conf: 79, t0: 4.0, t1: 6.2, track: null, img: 'media/thumb-n1.jpg' },
-  { id: 'n2', seg: 0, kind: 'Player character', name: 'Enemy player, close range', conf: 83, t0: 12.0, t1: 13.7, track: null, img: 'media/thumb-n2.jpg' },
+  { id: 'n1', seg: 0, kind: 'Event', name: 'Explosion', conf: 79, t0: 4.0, t1: 6.2, track: null, img: 'media/thumb-n1.jpg' },
+  { id: 'n2', seg: 0, kind: 'Player character', name: 'Opponent, close range', conf: 83, t0: 12.0, t1: 13.7, track: null, img: 'media/thumb-n2.jpg' },
   { id: 'n3', seg: 0, kind: 'HUD', name: 'Big hit: health 100 to 30', conf: 91, t0: 13.8, t1: 15.4, track: null, img: 'media/thumb-n3.jpg' },
-  { id: 'n4', seg: 0, kind: 'Event', name: 'Frag', conf: 74, t0: 14.6, t1: 16.8, track: null, img: 'media/thumb-n4.jpg' },
+  { id: 'n4', seg: 0, kind: 'Event', name: 'Win', conf: 74, t0: 14.6, t1: 16.8, track: null, img: 'media/thumb-n4.jpg' },
   { id: 'n5', seg: 0, kind: 'Item', name: 'Health pickups', conf: 68, t0: 19.5, t1: 22.5, track: null, img: 'media/thumb-n5.jpg' },
-  { id: 'v1', seg: 0, kind: 'Weapon', name: 'Your weapon, firing', conf: 93, t0: 31.5, t1: 33.6, track: null, img: 'media/thumb-weapon.jpg' },
+  { id: 'v1', seg: 0, kind: 'Action', name: 'Your action', conf: 93, t0: 31.5, t1: 33.6, track: null, img: 'media/thumb-weapon.jpg' },
   { id: 'v2', seg: 0, kind: 'Event', name: 'Explosion', conf: 81, t0: 35.0, t1: 37.6, track: null, img: 'media/thumb-explosion.jpg' },
-  { id: 'v3', seg: 0, kind: 'Event', name: 'Frag', conf: 88, t0: 39.9, t1: 42.0, track: null, img: 'media/thumb-frag.jpg' },
-  { id: 'v4', seg: 0, kind: 'Player character', name: 'Enemy player, close range', conf: 76, t0: 45.2, t1: 47.0, track: null, img: 'media/thumb-enemy.jpg' },
-  { id: 'v5', seg: 0, kind: 'Event', name: 'Double frag', conf: 72, t0: 47.0, t1: 49.0, track: null, img: 'media/thumb-double-frag.jpg' },
-  { id: 'v6', seg: 0, kind: 'Weapon', name: 'Vortex rifle (yours)', conf: 84, t0: 48.0, t1: 50.2, track: null, img: 'media/thumb-rifle.jpg' },
+  { id: 'v3', seg: 0, kind: 'Event', name: 'Win', conf: 88, t0: 39.9, t1: 42.0, track: null, img: 'media/thumb-frag.jpg' },
+  { id: 'v4', seg: 0, kind: 'Player character', name: 'Opponent, close range', conf: 76, t0: 45.2, t1: 47.0, track: null, img: 'media/thumb-enemy.jpg' },
+  { id: 'v5', seg: 0, kind: 'Event', name: 'Double win', conf: 72, t0: 47.0, t1: 49.0, track: null, img: 'media/thumb-double-frag.jpg' },
+  { id: 'v6', seg: 0, kind: 'Action', name: 'Vortex rifle (yours)', conf: 84, t0: 48.0, t1: 50.2, track: null, img: 'media/thumb-rifle.jpg' },
   { id: 'v7', seg: 0, kind: 'HUD', name: 'Low health warning', conf: 90, t0: 50.5, t1: 54.2, track: null, img: 'media/thumb-low-health.jpg' },
-  { id: 'v8', seg: 0, kind: 'Event', name: 'You got fragged', conf: 86, t0: 55.0, t1: 57.6, track: null, img: 'media/thumb-fragged.jpg' }
+  { id: 'v8', seg: 0, kind: 'Event', name: 'You got knocked out', conf: 86, t0: 55.0, t1: 57.6, track: null, img: 'media/thumb-fragged.jpg' }
 ];
-const EVT_SIM = { win: [2.95, 5], death: [17.5, 18.6], conf: [25.7, 27.5], called: 28.05, qAvail: 8.3, jWin: 2.3, jDeath: 16.8, jConf: 25.3, qText: 'The rocket fight around 0:07: how did it feel?', qLock: 'This question unlocks after the fight at 0:08. Keep annotating.', pc: 'Scorcher is back. Do you win this one?' };
-let EVT_VID = { win: [40.8, 43], death: [55.7, 57.6], conf: [35.2, 37], called: 40.6, qAvail: 49.2, jWin: 39.8, jDeath: 55.0, jConf: 34.8, qText: 'The double frag at 0:47: how did it feel?', qAt: 47.2, qImg: 'media/thumb-double-frag.jpg', qLock: 'This question unlocks after the double frag at 0:48. Keep annotating.', pc: 'Enemies ahead. Do you win this fight?' };
+const EVT_SIM = { win: [2.95, 5], death: [17.5, 18.6], conf: [25.7, 27.5], called: 28.05, qAvail: 8.3, jWin: 2.3, jDeath: 16.8, jConf: 25.3, qText: 'The big moment around 0:07: how did it feel?', qLock: 'This question unlocks after the fight at 0:08. Keep annotating.', pc: 'Challenge ahead. Do you make it?' };
+let EVT_VID = { win: [40.8, 43], death: [55.7, 57.6], conf: [35.2, 37], called: 40.6, qAvail: 49.2, jWin: 39.8, jDeath: 55.0, jConf: 34.8, qText: 'The double win at 0:47: how did it feel?', qAt: 47.2, qImg: 'media/thumb-double-frag.jpg', qLock: 'This question unlocks after the double win at 0:48. Keep annotating.', pc: 'Challenge ahead. Do you make it?' };
 const PLAY3 = { dets: DETS_V, evt: EVT_VID, clip: CLIP_URL, reel: 'media/reel-3.mp4', peaks: [[4.8, 60, 0.8], [12.9, 84, 0.6], [14.9, 72, 0.5], [20.5, 22, 1.5], [32.3, 32, 0.7], [36.2, 58, 0.7], [40.2, 70, 0.5], [46.2, 82, 0.7], [47.9, 80, 0.5], [52.2, 50, 1.3], [55.6, 92, 0.45]] };
 const NOEVT = { death: [999, 1000], jDeath: 999 };
 const PLAYS = [
   { clip: 'media/play-1.mp4', reel: 'media/reel-1.mp4',
-    evt: Object.assign({ win: [10.4, 12.5], conf: [5.0, 6.8], called: 10.2, qAvail: 11.2, jWin: 9.6, jConf: 4.6, qText: 'The close fight at 0:09: how did it feel?', qAt: 9.0, qImg: 'media/thumb-p1c.jpg', qLock: 'This question unlocks after the close fight at 0:09. Keep tagging.', pc: 'Enemy ahead. Do you win this fight?' }, NOEVT),
+    evt: Object.assign({ win: [10.4, 12.5], conf: [5.0, 6.8], called: 10.2, qAvail: 11.2, jWin: 9.6, jConf: 4.6, qText: 'The close call at 0:09: how did it feel?', qAt: 9.0, qImg: 'media/thumb-p1c.jpg', qLock: 'This question unlocks after the close call at 0:09. Keep tagging.', pc: 'Challenge ahead. Do you make it?' }, NOEVT),
     peaks: [[7.2, 60, 0.7], [8.8, 82, 0.5], [11, 62, 0.6], [20, 55, 0.6], [33.5, 55, 0.9], [42, 40, 0.6], [54.4, 80, 0.6], [59.3, 72, 0.5]],
     dets: [
-      { id: 'p1a', seg: 0, kind: 'Player character', name: 'Enemy in sight', conf: 81, t0: 6.4, t1: 8.2, track: null, img: 'media/thumb-p1a.jpg' },
-      { id: 'p1b', seg: 0, kind: 'Player character', name: 'Enemy player, close range', conf: 88, t0: 8.0, t1: 9.6, track: null, img: 'media/thumb-p1b.jpg' },
-      { id: 'p1c', seg: 0, kind: 'Event', name: 'Frag', conf: 74, t0: 9.2, t1: 11.0, track: null, img: 'media/thumb-p1c.jpg' },
+      { id: 'p1a', seg: 0, kind: 'Player character', name: 'Opponent in sight', conf: 81, t0: 6.4, t1: 8.2, track: null, img: 'media/thumb-p1a.jpg' },
+      { id: 'p1b', seg: 0, kind: 'Player character', name: 'Opponent, close range', conf: 88, t0: 8.0, t1: 9.6, track: null, img: 'media/thumb-p1b.jpg' },
+      { id: 'p1c', seg: 0, kind: 'Event', name: 'Win', conf: 74, t0: 9.2, t1: 11.0, track: null, img: 'media/thumb-p1c.jpg' },
       { id: 'p1d', seg: 0, kind: 'HUD', name: 'Big hit: health 107 to 67', conf: 90, t0: 10.6, t1: 12.4, track: null, img: 'media/thumb-p1d.jpg' },
       { id: 'p1e', seg: 0, kind: 'Movement', name: 'Retreat up the stairs', conf: 63, t0: 19.4, t1: 21.4, track: null, img: 'media/thumb-p1e.jpg' },
       { id: 'p1f', seg: 0, kind: 'Item', name: 'Health pickups', conf: 77, t0: 24.0, t1: 28.0, track: null, img: 'media/thumb-p1f.jpg' },
-      { id: 'p1g', seg: 0, kind: 'Player character', name: 'Enemy at range', conf: 69, t0: 32.0, t1: 34.6, track: null, img: 'media/thumb-p1g.jpg' },
+      { id: 'p1g', seg: 0, kind: 'Player character', name: 'Opponent at a distance', conf: 69, t0: 32.0, t1: 34.6, track: null, img: 'media/thumb-p1g.jpg' },
       { id: 'p1h', seg: 0, kind: 'Event', name: 'Explosion', conf: 84, t0: 53.6, t1: 55.6, track: null, img: 'media/thumb-p1h.jpg' }
     ] },
   { clip: 'media/play-2.mp4', reel: 'media/reel-2.mp4',
-    evt: Object.assign({ win: [39.8, 42], conf: [34.2, 36], called: 39.6, qAvail: 41, jWin: 38.8, jConf: 33.8, qText: 'The duel at 0:38: how did it feel?', qAt: 38.6, qImg: 'media/thumb-p2g.jpg', qLock: 'This question unlocks after the duel at 0:39. Keep tagging.', pc: 'Enemy ahead. Do you win this duel?' }, NOEVT),
+    evt: Object.assign({ win: [39.8, 42], conf: [34.2, 36], called: 39.6, qAvail: 41, jWin: 38.8, jConf: 33.8, qText: 'The one-on-one at 0:38: how did it feel?', qAt: 38.6, qImg: 'media/thumb-p2g.jpg', qLock: 'This question unlocks after the one-on-one at 0:39. Keep tagging.', pc: 'Challenge ahead. Do you make it?' }, NOEVT),
     peaks: [[0.6, 70, 0.6], [2.8, 90, 0.5], [6, 50, 1.2], [23.6, 60, 0.7], [27, 45, 0.6], [37, 80, 0.7], [39.4, 92, 0.5], [46.6, 55, 0.6], [54, 48, 0.8]],
     dets: [
-      { id: 'p2a', seg: 0, kind: 'Player character', name: 'Enemy jumping in', conf: 78, t0: 0.0, t1: 1.8, track: null, img: 'media/thumb-p2a.jpg' },
+      { id: 'p2a', seg: 0, kind: 'Player character', name: 'Opponent jumping in', conf: 78, t0: 0.0, t1: 1.8, track: null, img: 'media/thumb-p2a.jpg' },
       { id: 'p2b', seg: 0, kind: 'Event', name: 'Explosion hit', conf: 86, t0: 2.2, t1: 4.0, track: null, img: 'media/thumb-p2b.jpg' },
       { id: 'p2c', seg: 0, kind: 'HUD', name: 'Low health: 29', conf: 92, t0: 4.0, t1: 7.4, track: null, img: 'media/thumb-p2c.jpg' },
       { id: 'p2d', seg: 0, kind: 'Item', name: 'Item pickup', conf: 66, t0: 11.4, t1: 13.4, track: null, img: 'media/thumb-p2d.jpg' },
-      { id: 'p2e', seg: 0, kind: 'Weapon', name: 'Firing at range', conf: 71, t0: 22.6, t1: 24.6, track: null, img: 'media/thumb-p2e.jpg' },
-      { id: 'p2f', seg: 0, kind: 'Weapon', name: 'Plasma shot, close range', conf: 83, t0: 37.4, t1: 38.8, track: null, img: 'media/thumb-p2f.jpg' },
-      { id: 'p2g', seg: 0, kind: 'Event', name: 'Frag', conf: 76, t0: 38.8, t1: 41.0, track: null, img: 'media/thumb-p2g.jpg' },
-      { id: 'p2h', seg: 0, kind: 'Player character', name: 'Enemy player, close range', conf: 80, t0: 46.0, t1: 47.8, track: null, img: 'media/thumb-p2h.jpg' }
+      { id: 'p2e', seg: 0, kind: 'Action', name: 'Firing at range', conf: 71, t0: 22.6, t1: 24.6, track: null, img: 'media/thumb-p2e.jpg' },
+      { id: 'p2f', seg: 0, kind: 'Action', name: 'Your action, close range', conf: 83, t0: 37.4, t1: 38.8, track: null, img: 'media/thumb-p2f.jpg' },
+      { id: 'p2g', seg: 0, kind: 'Event', name: 'Win', conf: 76, t0: 38.8, t1: 41.0, track: null, img: 'media/thumb-p2g.jpg' },
+      { id: 'p2h', seg: 0, kind: 'Player character', name: 'Opponent, close range', conf: 80, t0: 46.0, t1: 47.8, track: null, img: 'media/thumb-p2h.jpg' }
     ] },
   PLAY3
 ];
 let PEAKS = PLAY3.peaks;
-function addPlay(url) { PLAYS.push({ clip: url, reel: url, evt: Object.assign({ win: [999, 1000], conf: [999, 1000], called: 9999, qAvail: 9999, jWin: 999, jConf: 999, qText: '', qLock: '', pc: '' }, NOEVT), peaks: [], dets: [] }); return PLAYS.length - 1; }
+function addPlay(url) { PLAYS.push({ clip: url, reel: url, evt: Object.assign({ win: [999, 1000], conf: [999, 1000], called: 9999, qAvail: 9999, jWin: 999, jConf: 999, qText: '', qLock: '', pc: 'Challenge ahead. Do you make it?' }, NOEVT), peaks: [], dets: [] }); return PLAYS.length - 1; }
 function usePlay(i) { const pl = PLAYS.at(i) || PLAY3; DETS_V = pl.dets; EVT_VID = pl.evt; CLIP_URL = pl.clip; REEL_URL = pl.reel; PEAKS = pl.peaks; if (MODE.video) DETS = DETS_V; }
 const EMO_GROUPS = [
   { k: 'good', name: 'Good', sub: 'enjoying it', items: [['Joy', 'Pure fun, I am enjoying this'], ['Pride', 'I pulled that off, that is my skill'], ['Interest', 'I want to see what happens next'], ['Awe', 'Wow, that looked amazing'], ['Hope', 'This could still turn around'], ['Relief', 'Phew, I survived that'], ['Gratitude', 'Thanks to a teammate or a lucky break'], ['Love', 'I just love this game'], ['Nostalgia', 'Reminds me of games I used to love'], ['Compassion', 'I felt for the other player']] },
@@ -2295,8 +2295,8 @@ class Component extends DCLogic {
     const logItems = s.markers.filter((k) => k.kind !== 'emo');
     const logAll = logItems.length, logDone = logItems.filter((k) => k.done).length, logPend = logAll - logDone;
     const selK = logItems.find((k) => k.id === s.logSel) || null;
-    const FUNR = ['Great shot', 'Close fight', 'Movement', 'Surprise', 'Looks cool', 'Won the duel'];
-    const NOTR = ['Unfair', 'Confusing', 'Boring', 'Controls', 'Frustrating', 'Lost the duel'];
+    const FUNR = ['Great move', 'Close call', 'Smooth control', 'Surprise', 'Looks amazing', 'Beat the challenge'];
+    const NOTR = ['Unfair', 'Confusing', 'Boring', 'Controls', "Couldn't see it", 'Failed the challenge'];
     const logR = s.logReasons || [];
     const tasks = [
       { name: 'Check system detections', prog: checked + '/18', done: checked >= 18 },
@@ -2319,9 +2319,9 @@ class Component extends DCLogic {
     const actions = [
       ['Annotation', 'Check what the system spotted', 'Confirm ✓ or correct ✕ each object the system labelled', '+10 / +15 each', detDone ? detDone + '/' + (detDone + detTodo) : detTodo ? detTodo + ' to do' : '', detTodo === 0 && detDone > 0, 'confirm'],
       ['Cards', 'Expectation check', 'Five quick questions about why you played', '+5 each', '', expDone, 'expect'],
-      ['Cards', 'Frag card', 'How did your first frag feel?', '+5 each', '', s.ans.OW1 != null, 'win'],
+      ['Cards', 'Win card', 'How did your first win feel?', '+5 each', '', s.ans.OW1 != null, 'win'],
       ['Cards', 'Death card', 'Was that death fair?', '+5 each', '', s.ans.OC1 != null, 'death'],
-      ['Cards', 'Call it', 'Predict the duel before it happens', '+5, +10 if right', '', s.ans.PC1 != null, 'callit'],
+      ['Cards', 'Call it', 'Predict the outcome before it happens', '+5, +10 if right', '', s.ans.PC1 != null, 'callit'],
       ['Feedback', 'Question of the clip', EVT().qText, '+25', '', !!s.answered, 'question'],
       ['Blitz', 'Feedback Blitz', 'Full-screen questions at the halfway mark', '+5 each, +25 bonus', '', !!s.blitzResult, 'blitz'],
       ['Moments', 'Explain your moments', 'Say why each fun or frustrating moment felt that way', '+10 each', logPend ? logPend + ' to do' : '', logAll > 0 && logPend === 0, 'explain'],
@@ -2755,26 +2755,26 @@ class Component extends DCLogic {
    Drives the gameplay component (window.__rhage.inst) and shows its own screens around it. */
 (function () {
   const PLAYS = [
-    { n: 1, reel: 'media/reel-1.mp4', clip: 'media/play-1.mp4', thumb: 'media/thumb-p1c.jpg', title: 'Rocket fight and a close frag',
-      skills: [['Quick reactions in close fights', 9, 'You reacted fast in the close fight'], ['Good rocket timing', 7, 'You timed your rockets well'], ['Fast health recovery', 26, 'You got your health back quickly']],
+    { n: 1, reel: 'media/reel-1.mp4', clip: 'media/play-1.mp4', thumb: 'media/thumb-p1c.jpg', title: 'Big explosion and a close win',
+      skills: [['Quick reactions in close fights', 9, 'You reacted fast in the close fight'], ['Good timing', 7, 'You timed your moves well'], ['Fast health recovery', 26, 'You got your health back quickly']],
       work: [
-        { t: 'Avoid damage right after a frag', me: 'You took damage right after your frag', at: 11, why: 'You took 40 damage straight after your frag at 0:09. That is when enemies punish you.', drill: 'After a frag, step back behind cover for one second before moving on.' },
-        { t: 'Hold your angle at range', me: 'You lost your aim at long range', at: 33, why: 'At 0:33 you swapped direction mid-fight and lost your aim.', drill: 'Pick one wall edge and peek from it, do not cross open ground.' },
-        { t: 'Watch your flank', me: 'An enemy surprised you from the side', at: 54, why: 'The enemy at 0:54 came from your side and got close before you reacted.', drill: 'Turn your view every few seconds when you hear footsteps.' }] },
-    { n: 2, reel: 'media/reel-2.mp4', clip: 'media/play-2.mp4', thumb: 'media/thumb-p2g.jpg', title: 'Down to 29 health, then a duel',
-      skills: [['Wins close duels', 39, 'You won the close duel'], ['Stays calm at low health', 5, 'You stayed calm on low health'], ['Smart health route', 15, 'You took a smart route to health']],
+        { t: 'Stay safe right after a win', me: 'You got hit right after your win', at: 11, why: 'You lost 40 health straight after your win at 0:09. That is when you are most exposed.', drill: 'After a win, step back to safety for one second before moving on.' },
+        { t: 'Stay steady at a distance', me: 'You lost precision at a distance', at: 33, why: 'At 0:33 you changed direction mid-fight and lost precision.', drill: 'Pick one safe spot and work from there, do not cross open ground.' },
+        { t: 'Watch your sides', me: 'An opponent surprised you from the side', at: 54, why: 'The opponent at 0:54 came from your side and got close before you reacted.', drill: 'Turn your view every few seconds when you hear footsteps.' }] },
+    { n: 2, reel: 'media/reel-2.mp4', clip: 'media/play-2.mp4', thumb: 'media/thumb-p2g.jpg', title: 'Low on health, then a one-on-one',
+      skills: [['Wins close one-on-ones', 39, 'You won the close one-on-one'], ['Stays calm at low health', 5, 'You stayed calm on low health'], ['Smart health route', 15, 'You took a smart route to health']],
       work: [
-        { t: 'Do not run into rockets', me: 'You ran straight into a rocket', at: 3, why: 'You lost 41 health in one hit at 0:03 by running straight at the explosion.', drill: 'Strafe sideways when you see a rocket coming, never straight in.' },
+        { t: 'Avoid big hits', me: 'You ran straight into a big hit', at: 3, why: 'You lost 41 health in one hit at 0:03 by running straight into the explosion.', drill: 'Move sideways when you see danger coming, never straight in.' },
         { t: 'Pick up health before fights', me: 'You fought before healing up', at: 22, why: 'You started the fight at 0:22 before you were back to full health.', drill: 'Grab one more health pack before you look for the next fight.' },
-        { t: 'Finish fights faster', me: 'Your fight dragged on too long', at: 46, why: 'The fight at 0:46 dragged on and gave the enemy time to recover.', drill: 'Switch to your strongest close-range weapon as soon as the enemy is near.' }] },
-    { n: 3, reel: 'media/reel-3.mp4', clip: 'media/play-3.mp4', thumb: 'media/thumb-double-frag.jpg', title: 'Double frag and a hard death',
-      skills: [['Clutch frag under pressure', 41, 'You landed the frag under pressure'], ['Fast target switching', 47, 'You switched targets fast'], ['Calm at low health', 52, 'You kept calm on low health']],
+        { t: 'Finish fights faster', me: 'Your fight dragged on too long', at: 46, why: 'The fight at 0:46 dragged on and gave the opponent time to recover.', drill: 'Use your strongest move as soon as the opponent is near.' }] },
+    { n: 3, reel: 'media/reel-3.mp4', clip: 'media/play-3.mp4', thumb: 'media/thumb-double-frag.jpg', title: 'Double win and a hard loss',
+      skills: [['Wins under pressure', 41, 'You won under pressure'], ['Fast target switching', 47, 'You switched targets fast'], ['Calm at low health', 52, 'You kept calm on low health']],
       work: [
-        { t: 'Use cover in close fights', me: 'You fought in the open, without cover', at: 13, why: 'You took 70 damage in about a second at 0:13, standing in the open.', drill: 'Strafe-peek: fight from the edge of a wall, not in the middle of the room.' },
-        { t: 'Pick up health earlier', me: 'You went into a fight on low health', at: 51, why: 'At 0:51 you went into the next fight on low health and it cost you.', drill: 'Below 50 health, route to a health pack before re-engaging.' },
-        { t: 'Do not chase when hurt', me: 'You chased while hurt and got fragged', at: 55, why: 'You chased at 0:55 on low health and got fragged.', drill: 'If health is low, let the enemy go and reset.' }] }
+        { t: 'Use cover in close fights', me: 'You fought in the open, without cover', at: 13, why: 'You took 70 damage in about a second at 0:13, standing in the open.', drill: 'Stay near cover: fight from the edge of a wall, not in the middle of the room.' },
+        { t: 'Pick up health earlier', me: 'You went into a fight on low health', at: 51, why: 'At 0:51 you went into the next fight on low health and it cost you.', drill: 'Below 50 health, pick up health before the next fight.' },
+        { t: 'Do not chase when hurt', me: 'You chased while hurt and got knocked out', at: 55, why: 'You chased at 0:55 on low health and got knocked out.', drill: 'If health is low, let the opponent go and reset.' }] }
   ];
-  const TYPES = { mastery: ['The Technician', 'You play to get better and pull off clean moves.'], challenge: ['The Challenger', 'You want hard fights and love beating them.'], competition: ['The Duellist', 'You live for 1-v-1s and want to come out on top.'], action: ['The Chaos Maker', 'Explosions, speed and pure action are your thing.'], thrill: ['The Adrenaline Junkie', 'You play for the rush when it gets tense.'], completion: ['The Completionist', 'You want to finish everything the game offers.'], power: ['The Powerhouse', 'You love gearing up and getting stronger.'], fantasy: ['The Role Player', 'You play to be someone else for a while.'], story: ['The Storyteller', 'You play to find out what happens next.'], aesthetic: ['The Sightseer', 'You enjoy how the game looks and sounds.'], discovery: ['The Explorer', 'You want to find every corner and secret.'], social: ['The Team Player', 'You play for the people you play with.'], strategy: ['The Tactician', 'You win by planning and outsmarting.'] };
+  const TYPES = { mastery: ['The Technician', 'You play to get better and pull off clean moves.'], challenge: ['The Challenger', 'You want hard fights and love beating them.'], competition: ['The Competitor', 'You live for 1-v-1s and want to come out on top.'], action: ['The Chaos Maker', 'Explosions, speed and pure action are your thing.'], thrill: ['The Adrenaline Junkie', 'You play for the rush when it gets tense.'], completion: ['The Completionist', 'You want to finish everything the game offers.'], power: ['The Powerhouse', 'You love gearing up and getting stronger.'], fantasy: ['The Role Player', 'You play to be someone else for a while.'], story: ['The Storyteller', 'You play to find out what happens next.'], aesthetic: ['The Sightseer', 'You enjoy how the game looks and sounds.'], discovery: ['The Explorer', 'You want to find every corner and secret.'], social: ['The Team Player', 'You play for the people you play with.'], strategy: ['The Tactician', 'You win by planning and outsmarting.'] };
   const AXES = [['mastery', 'Mastery'], ['competition', 'Competition'], ['action', 'Action'], ['thrill', 'Thrill'], ['challenge', 'Challenge'], ['strategy', 'Strategy'], ['discovery', 'Discovery'], ['social', 'Social']];
   let CID = 0;
   const J = { view: 'off', playIdx: 0, ptsAtStart: 0, lastKey: '', open: {} };
@@ -2791,9 +2791,9 @@ class Component extends DCLogic {
   function pget(i) { return pstore()[pkey(i)] || {}; }
   function pset(i, patch) { const all = pstore(); all[pkey(i)] = Object.assign({}, all[pkey(i)] || {}, patch); try { localStorage.setItem('rhage.plays', JSON.stringify(all)); } catch (e) {} }
   const MOMENTS = [
-    [[7, 'the rocket fight'], [9, 'the close fight and my frag'], [11, 'that big hit'], [26, 'grabbing health'], [33, 'the long-range fight'], [54, 'the flank at close range']],
-    [[3, 'that explosion hit'], [5, 'surviving on 29 health'], [15, 'my health run'], [23, 'the firefight'], [39, 'the duel and my frag'], [46, 'the plasma fight']],
-    [[7, 'the rocket fight'], [13, 'the close fight'], [41, 'the clutch frag'], [47, 'the double frag'], [52, 'fighting on low health'], [56, 'getting fragged']]];
+    [[7, 'the explosion'], [9, 'the close fight and my win'], [11, 'that big hit'], [26, 'grabbing health'], [33, 'the long-range fight'], [54, 'the surprise from the side']],
+    [[3, 'that explosion hit'], [5, 'surviving on 29 health'], [15, 'my health run'], [23, 'the firefight'], [39, 'the one-on-one and my win'], [46, 'the plasma fight']],
+    [[7, 'the explosion'], [13, 'the close fight'], [41, 'the win under pressure'], [47, 'the double win'], [52, 'fighting on low health'], [56, 'getting knocked out']]];
   const ptitle = (i) => pget(i).title || (PLAYS[i] && PLAYS[i].title) || '';
   function draft(i) {
     const p = PLAYS[i], st = pget(i), c = inst();
@@ -2807,7 +2807,7 @@ class Component extends DCLogic {
     if (st.peak) parts.push(`My heart maxed out at ${mmss(st.peak.t)}${near ? ` during ${near}` : ''}${st.taps ? ` (${st.taps} intensity taps)` : ''}.`);
     if (feel.length) parts.push(`Felt: ${feel.join(' and ').toLowerCase()}.`);
     if (type) parts.push(`Classic ${type} move.`);
-    parts.push('#PLAISense #gaming' + (p.custom ? '' : ' #Xonotic'));
+    parts.push('#PLAISense #gaming' + (p.custom ? '' : ''));
     return parts.join(' ');
   }
   function prog() { try { return JSON.parse(localStorage.getItem('rhage.progress') || '{}'); } catch (e) { return {}; } }
@@ -3135,7 +3135,7 @@ class Component extends DCLogic {
     const d = doneMap(), done = PLAYS.filter((p) => !p.custom && d[p.n]);
     if (!done.length) return `<div class="rj-wrap">${top('Coach', 'menu')}<div class="rj-card" style="text-align:center;padding:24px"><h2 class="rj-h" style="font-size:20px">Tag your first Play to meet your coach</h2><p class="rj-sub">Your coach reads your skills, your feelings and your answers. One Play is enough for a first read.</p><div style="margin-top:10px"><button class="rj-btn" data-go="plays">Choose a Play</button></div></div></div>`;
     const pt = profileType(), cf = confidence();
-    const type = pt.has ? TYPES[pt.top[0]] : ['The Duellist', 'A first read from your gameplay: you go looking for 1-v-1 fights.'];
+    const type = pt.has ? TYPES[pt.top[0]] : ['The Competitor', 'A first read from your gameplay: you go looking for 1-v-1 fights.'];
     const skills = []; done.forEach((p) => p.skills.forEach((s) => skills.push([s[0], s[1], p])));
     const work = []; done.forEach((p) => p.work.forEach((w) => work.push(Object.assign({ p }, w))));
     const s0 = skills[0], w0 = work[0];
@@ -3183,7 +3183,7 @@ class Component extends DCLogic {
   // ---------- Stats ----------
   function vStats() {
     const hist = prog().hist || [];
-    const sk = [['Aim', 'do your shots land when it counts', 85, 'top 15%'], ['Positioning', 'where you stand when a fight starts', 40, 'bottom 40%'], ['Composure', 'do you stay sharp when hurt', 75, 'top 25%'], ['Movement', 'how well you dodge and get around', 62, 'top 40%'], ['Decisions', 'picking the right fights', 55, 'about average']];
+    const sk = [['Precision', 'do your moves land when it counts', 85, 'top 15%'], ['Positioning', 'where you stand when a fight starts', 40, 'bottom 40%'], ['Composure', 'do you stay sharp when hurt', 75, 'top 25%'], ['Movement', 'how well you dodge and get around', 62, 'top 40%'], ['Decisions', 'picking the right fights', 55, 'about average']];
     const bars = sk.map((x) => `<div class="rj-li" style="border:0;padding:2px 0"><span><b>${x[0]}</b> <span class="rj-muted">· ${x[1]}</span></span><span class="rj-muted">${x[3]}</span></div><div class="rj-bar"><i style="width:${x[2]}%"></i><span class="avg"></span></div>`).join('');
     let prog2 = '<span class="rj-muted">Tag a Play to start your progress line.</span>';
     if (hist.length) {
@@ -3191,14 +3191,14 @@ class Component extends DCLogic {
       const pts = hist.map((x, i) => [20 + (hist.length === 1 ? 130 : (i * 260) / (hist.length - 1)), h - 12 - (x.moments / mxp) * (h - 24)]);
       prog2 = `<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Moments tagged per play"><line x1="10" y1="${h - 10}" x2="${w - 10}" y2="${h - 10}" stroke="#2a4756"/><polyline points="${pts.map((p) => p.map((v) => v.toFixed(1)).join(',')).join(' ')}" fill="none" stroke="#3DDC97" stroke-width="2"/>${pts.map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="#3DDC97"/><text x="${p[0].toFixed(1)}" y="${(p[1] - 7).toFixed(1)}" text-anchor="middle" font-size="10" fill="#a9bcc4">${hist[i].moments}</text>`).join('')}</svg><span class="rj-muted">Moments you tagged per Play. More moments = a sharper picture of you.</span>`;
     }
-    const lb = [['FragQueen', 9840], ['NullPointer', 9120], ['Kestrel', 8770]];
+    const lb = [['PixelQueen', 9840], ['NullPointer', 9120], ['Kestrel', 8770]];
     const me = (inst() && inst().state.pts) || 0;
     return `<div class="rj-wrap">${top('Stats', 'menu')}
       <div class="rj-card"><h3>Your skills vs other players <span class="rj-prev">Preview</span></h3><span class="rj-muted">Dashed line = average player. Further right = better than most.</span>${bars}</div>
       <div class="rj-grid2">
         <div class="rj-card"><h3>Leaderboard · this week <span class="rj-prev">Preview</span></h3>${lb.map((x, i) => `<div class="rj-li"><span>${i + 1}. ${x[0]}</span><span>${x[1].toLocaleString('en-GB')}</span></div>`).join('')}<div class="rj-muted" style="text-align:center">···</div><div class="rj-li" style="color:#FF5A1F;font-weight:700"><span>41. You</span><span>${me.toLocaleString('en-GB')}</span></div></div>
         <div class="rj-card"><h3>Your progress</h3>${prog2}</div></div>
-      <div class="rj-card"><h3>Player types in the community <span class="rj-prev">Preview</span></h3>${[['Tactician', 24], ['Duellist', 18], ['Explorer', 15], ['Team Player', 12], ['Chaos Maker', 10]].map((x) => `<div class="rj-li" style="border:0;padding:1px 0"><span style="width:110px">${x[0]}</span><div class="rj-bar" style="flex:1;margin:6px 8px"><i style="width:${x[1] * 4}%;background:#7de8ff"></i></div><span class="rj-muted">${x[1]}%</span></div>`).join('')}<span class="rj-muted">Example numbers until enough players have joined.</span></div></div>`;
+      <div class="rj-card"><h3>Player types in the community <span class="rj-prev">Preview</span></h3>${[['Tactician', 24], ['Competitor', 18], ['Explorer', 15], ['Team Player', 12], ['Chaos Maker', 10]].map((x) => `<div class="rj-li" style="border:0;padding:1px 0"><span style="width:110px">${x[0]}</span><div class="rj-bar" style="flex:1;margin:6px 8px"><i style="width:${x[1] * 4}%;background:#7de8ff"></i></div><span class="rj-muted">${x[1]}%</span></div>`).join('')}<span class="rj-muted">Example numbers until enough players have joined.</span></div></div>`;
   }
 
   // ---------- video modal ----------
