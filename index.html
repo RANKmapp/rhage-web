@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta name="rh-build" content="1791542516"><script>(function(){var B="1791542516";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
+<!doctype html><html lang="en"><head><meta name="rh-build" content="1791542837"><script>(function(){var B="1791542837";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"></head><body><title>RHAGE Player</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -1825,6 +1825,11 @@ class Component extends DCLogic {
     const p = this.toLocal(e);
     const inGame = p.x > 4 && p.x < 766 && p.y > 4 && p.y < 386;
     if (!inGame) { this.setState({ drag: null, stopped: !!this.wasStopped }); return; }
+    if (this.journey && (a.kind === 'fun' || a.kind === 'notfun')) {
+      const id = 'm' + (++this.rid); const fun = a.kind === 'fun';
+      this.setState((st) => ({ drag: null, stopped: !!this.wasStopped, markers: st.markers.concat([{ id, t: st.vt, kind: a.kind, label: fun ? 'Fun' : 'Frustration', reasons: [], why: '', done: false, x: p.x, y: p.y }]) }));
+      this.fly(a.kind); this.award(5, fun ? 'fun moment' : 'frustration'); this.openCardFor(id); return;
+    }
     this.setState({ drag: null, note: { kind: a.kind, x: p.x, y: p.y, t: this.state.vt, text: '', chips: [] } });
   };
   aUp = this.dUp;
