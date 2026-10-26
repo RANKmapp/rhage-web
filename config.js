@@ -1,4 +1,8 @@
-window.RHAGE_CFG = {
-  url: 'https://gccqocetoogzuhtphbou.supabase.co',
-  key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjY3FvY2V0b29nenVodHBoYm91Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4NTcxNDAsImV4cCI6MjEwNjQzMzE0MH0.10tkFpvrwV6-LGZuhyX7P3BQPMKgpP9Lsf1NfAuN2tI'
-};
+/* RHAGE configuration.
+   Local-first build: no server. All answers are kept on this device (browser
+   storage) and can be exported any time from Privacy -> Export my answers.
+   To re-enable cloud sync later, fill in a Supabase project:
+     window.RHAGE_CFG = { url: 'https://<ref>.supabase.co', key: '<anon key>' }
+   (The previous project was retired; ask the team before pointing this at a
+   new one, and recreate the rh_get/rh_put/rh_del/rh_list SQL first.) */
+window.RHAGE_CFG = { url: null, key: null };

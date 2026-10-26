@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta name="rh-build" content="1791555799"><script>(function(){var B="1791555799";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="RHAGE"><meta name="theme-color" content="#03080b"></head><body><title>RHAGE Player</title>
+<!doctype html><html lang="en"><head><meta name="rh-build" content="1793043000"><script>(function(){var B="1793043000";if(!/github\.io$/.test(location.hostname))return;function chk(){fetch(location.pathname+"?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/name="rh-build" content="(\d+)"/);if(m&&m[1]!==B){location.replace(location.pathname+"?v="+m[1]);}}).catch(function(){});}chk();document.addEventListener("visibilitychange",function(){if(!document.hidden)chk();});})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="RHAGE"><meta name="theme-color" content="#03080b"></head><body><title>RHAGE Player</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -172,6 +172,117 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 .rj-play > div:not(.rj-cutwrap) div { padding: 0; }
 </style>
 
+<style id="gx2">
+/* ===== RHAGE design layer 2 · sharp pass =====
+   Same world, higher execution: layered depth, consistent radii, real press states,
+   tabular numerals, one authored moment (CTA sheen). Overrides only; base styles stay. */
+:root {
+  --gx-line: rgba(125,232,255,.28);
+  --gx-line-soft: rgba(125,232,255,.16);
+  --gx-or: #FF5A1F; --gx-te: #3DDC97; --gx-cy: #7de8ff;
+  --gx-ease: cubic-bezier(.2,.8,.2,1);
+  --gx-press: transform .13s var(--gx-ease);
+}
+::selection { background: rgba(255,90,31,.6); color: #fff; }
+input, textarea { caret-color: var(--gx-or); }
+.hud { font-variant-numeric: tabular-nums; }
+#rj, #rh-consent, #rh-res { scrollbar-width: thin; scrollbar-color: rgba(125,232,255,.32) transparent; }
+#rj::-webkit-scrollbar, #rh-consent::-webkit-scrollbar, #rh-res::-webkit-scrollbar { width: 8px; height: 8px; }
+#rj::-webkit-scrollbar-thumb, #rh-consent::-webkit-scrollbar-thumb, #rh-res::-webkit-scrollbar-thumb { background: rgba(125,232,255,.28); border-radius: 4px; }
+#rj::-webkit-scrollbar-track, #rh-consent::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- journey frame ---- */
+.rj-wrap { max-width: 960px; padding: 14px 22px 18px; gap: 12px; }
+.rj-kick { font-size: 13px; letter-spacing: .18em; }
+.rj-h { letter-spacing: .02em; }
+.gx-title { letter-spacing: .015em; text-shadow: 0 0 16px rgba(255,90,31,.5), 0 2px 0 rgba(0,0,0,.55), 0 12px 36px rgba(0,0,0,.6); }
+.gx-count span { font-size: 168px; text-shadow: 0 0 34px rgba(255,90,31,.85), 0 8px 32px rgba(0,0,0,.55); }
+
+/* buttons: one elevation family, real press */
+.rj-btn { padding: 11px 38px; letter-spacing: .1em;
+  background: linear-gradient(180deg,#ff8a50,#FF5A1F 48%,#dd4a10);
+  box-shadow: 0 6px 20px rgba(255,90,31,.38), inset 0 1px 0 rgba(255,255,255,.38), inset 0 -2px 0 rgba(0,0,0,.25);
+  transition: var(--gx-press), box-shadow .13s var(--gx-ease); }
+.rj-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(255,90,31,.5), inset 0 1px 0 rgba(255,255,255,.38), inset 0 -2px 0 rgba(0,0,0,.25); }
+.rj-btn:active { transform: translateY(1px) scale(.985); box-shadow: 0 3px 10px rgba(255,90,31,.35), inset 0 1px 0 rgba(255,255,255,.2); }
+.rj-btn2 { transition: var(--gx-press), outline-color .13s; }
+.rj-btn2:hover { transform: translateY(-1px); }
+.rj-btn2:active { transform: translateY(1px) scale(.985); }
+.rj-back { transition: var(--gx-press), border-color .13s, background .13s; }
+.rj-back:hover { border-color: rgba(125,232,255,.8); background: rgba(14,30,40,.9); }
+.rj-back:active { transform: translateY(1px); }
+
+/* the authored moment: sheen sweep on the primary CTA */
+.gx-start { position: relative; overflow: hidden; }
+.gx-start::after { content: ''; position: absolute; top: 0; bottom: 0; left: -70%; width: 42%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.34), transparent);
+  transform: skewX(-18deg); animation: gxsheen 3.6s var(--gx-ease) infinite; pointer-events: none; }
+@keyframes gxsheen { 0%, 58% { left: -70%; } 88%, 100% { left: 135%; } }
+
+/* tiles: lift + underline notch */
+.rj-tile { gap: 4px; padding: 12px 8px 11px; transition: var(--gx-press), border-color .14s, background .14s; }
+.rj-tile b { font-size: 21px; }
+.rj-tile span { font-size: 12.5px; }
+.rj-tile::after { content: ''; position: absolute; left: 16%; right: 16%; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(125,232,255,.6), transparent); opacity: 0; transition: opacity .14s; }
+.rj-tile:hover { transform: translateY(-2px); border-color: rgba(125,232,255,.55); background: linear-gradient(180deg, rgba(21,43,56,.95), rgba(8,18,25,.95)); }
+.rj-tile:hover::after { opacity: 1; }
+.rj-tile:active { transform: translateY(0) scale(.98); }
+
+/* cards + lists */
+.rj-card { padding: 14px 16px; line-height: 1.42;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 8px 24px rgba(0,0,0,.3); }
+.rj-card h3 { font-size: 21px; letter-spacing: .05em; margin: 0 0 8px; }
+.rj-li { padding: 8px 0 8px 2px; border-bottom-color: rgba(125,232,255,.18); }
+.rj-t { color: #8feaff; letter-spacing: .02em; }
+.rj-chip { font-size: 14px; padding: 4px 12px; }
+.rj-bar { height: 12px; margin: 6px 0 8px; }
+.rj-play { transition: var(--gx-press), border-color .14s; }
+.rj-play:hover { transform: translateY(-2px); border-color: rgba(125,232,255,.5); }
+.rj-play:active { transform: translateY(0) scale(.99); }
+.rj-play img { height: 108px; }
+.rj-play div { padding: 10px 12px; }
+.rj-vbox { transition: var(--gx-press), border-color .13s; }
+.rj-vbox:hover { border-color: rgba(125,232,255,.7); transform: translateY(-1px); }
+.rj-vbox:active { transform: translateY(0) scale(.98); }
+.gx-stat { min-width: 118px; }
+
+/* consent + results */
+.rh-card { padding: 22px 22px 26px; }
+.rh-grid { gap: 8px 12px; }
+.rh-grid div { border-radius: 8px; border-color: var(--gx-line-soft);
+  background: linear-gradient(180deg, #0e1e27, #0a161e); }
+.rh-grid b { color: #8feaff; }
+.rh-checks label { border-radius: 8px; transition: border-color .12s; }
+.rh-checks label:hover { border-color: rgba(61,220,151,.55); }
+#rh-code { caret-color: var(--gx-or); }
+#rh-code:focus { outline: 2px solid rgba(61,220,151,.7); outline-offset: -1px; }
+#rh-go { border-radius: 8px; font-weight: 800; letter-spacing: .04em;
+  box-shadow: 0 6px 18px rgba(61,220,151,.28), inset 0 1px 0 rgba(255,255,255,.4); transition: var(--gx-press), box-shadow .12s; }
+#rh-go:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(61,220,151,.36), inset 0 1px 0 rgba(255,255,255,.4); }
+#rh-go:not(:disabled):active { transform: translateY(1px); box-shadow: 0 3px 10px rgba(61,220,151,.25); }
+.rh-ghost { transition: var(--gx-press), border-color .12s, color .12s; }
+.rh-ghost:hover { border-color: rgba(125,232,255,.6); color: #ffffff; }
+.rh-ghost:active { transform: translateY(1px); }
+#rh-end { border-radius: 12px; }
+
+/* ---- game HUD (inline-styled nodes, targeted) ---- */
+#app input:focus, #app textarea:focus { outline: 2px solid rgba(61,220,151,.75); outline-offset: -1px; }
+#app [style*="background: #0f1f28"] {
+  background: linear-gradient(180deg, #13252f, #0a161e) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* keep the compact consent layout winning in short landscape viewports */
+@media (orientation: landscape) and (max-height: 520px) {
+  .rh-card { padding: 12px 20px 16px; }
+  .rj-wrap { padding: 10px 16px 12px; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gx-start::after { animation: none; }
+  .rj-btn, .rj-btn2, .rj-tile, .rj-play, .rj-back, #rh-go, .rh-ghost { transition: none; }
+}
+</style>
 <div id="app"></div>
 <div id="rh-consent">
   <div class="rh-card">
@@ -195,6 +306,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
     </div>
     <p id="rh-status">Connecting…</p>
     <div class="rh-links">
+      <button class="rh-ghost" id="rh-export" style="display:none">Export my answers</button>
       <button class="rh-ghost" id="rh-withdraw" style="display:none">Delete my answers</button>
       <button class="rh-ghost" id="rh-results" style="display:none">Results (only you see this)</button>
       <button class="rh-ghost" id="rh-close-consent">Close</button>
@@ -429,13 +541,13 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </svg>
 </button>
 </sc-if>
-<div class="hud" style="position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; align-items: baseline; gap: 6px; padding: 6px 14px; border-radius: 10px; background: rgba(9,22,30,0.78); border: 1.5px solid rgba(98,160,176,0.3); pointer-events: none">
-<span style="font-size: 19px; font-weight: 700; letter-spacing: 0.04em">{{timer}}</span>
+<div class="hud" style="position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; align-items: baseline; gap: 6px; padding: 6px 14px; border-radius: 10px; background: rgba(9,22,30,0.82); border: 1.5px solid rgba(125,232,255,0.22); box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 14px rgba(0,0,0,0.35); pointer-events: none; font-variant-numeric: tabular-nums">
+<span style="font-size: 19px; font-weight: 700; letter-spacing: 0.02em">{{timer}}</span>
 <span style="font-size: 11px; color: rgba(238,244,246,0.55)">/ 1:00</span>
 </div>
 
 <div style="position: absolute; right: 80px; top: 10px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; pointer-events: none">
-<div class="hud {{bumpCls}}" style="position: relative; display: flex; align-items: baseline; gap: 5px; padding: 6px 12px; border-radius: 10px; background: {{ptsBg}}; border: 1.5px solid {{ptsBorder}}; transform-origin: 100% 50%">
+<div class="hud {{bumpCls}}" style="position: relative; display: flex; align-items: baseline; gap: 5px; padding: 6px 12px; border-radius: 10px; background: {{ptsBg}}; border: 1.5px solid {{ptsBorder}}; transform-origin: 100% 50%; font-variant-numeric: tabular-nums; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06)">
 <span style="font-size: 19px; font-weight: 700; min-width: 52px; text-align: right">{{ptsLabel}}</span>
 <span style="font-size: 10px; letter-spacing: 0.1em; color: {{accent}}">PTS</span>
 <div style="position: absolute; right: calc(100% + 8px); top: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px">
@@ -446,10 +558,10 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </div>
 </div>
 
-<div style="position: absolute; left: 10px; top: 10px; width: 100px; height: 308px; box-sizing: border-box; padding: 8px 8px; border-radius: 18px; background: rgba(9,22,30,0.8); border: 1.5px solid rgba(98,160,176,0.32); display: flex; flex-direction: column; align-items: center; gap: 5px">
+<div style="position: absolute; left: 10px; top: 10px; width: 100px; height: 308px; box-sizing: border-box; padding: 8px 8px; border-radius: 16px; background: rgba(9,22,30,0.82); border: 1.5px solid rgba(125,232,255,0.2); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 22px rgba(0,0,0,0.35); display: flex; flex-direction: column; align-items: center; gap: 6px">
 <div class="hud" style="font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">Speed</div>
 <sc-for list="{{speeds}}" as="sp" hint-placeholder-count="3">
-<button type="button" onClick="{{sp.pick}}" aria-pressed="{{sp.on}}" aria-label="{{sp.aria}}" class="hud" style="width: 82px; height: 32px; border-radius: 10px; border: 2px solid {{accent}}; background: {{sp.bg}}; color: {{sp.fg}}; font-size: 18px; font-weight: 700; cursor: pointer">{{sp.label}}</button>
+<button type="button" onClick="{{sp.pick}}" aria-pressed="{{sp.on}}" aria-label="{{sp.aria}}" class="hud" style="width: 82px; height: 32px; border-radius: 10px; border: 1.5px solid {{accent}}; background: {{sp.bg}}; color: {{sp.fg}}; font-size: 18px; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">{{sp.label}}</button>
 </sc-for>
 <button type="button" onClick="{{nextHighlight}}" aria-label="Jump to the next highlight" style="width: 82px; height: 32px; border-radius: 10px; border: 2px solid #3DDC97; background: rgba(61,220,151,0.14); color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 14px; font-weight: 700; cursor: pointer">
 <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l11 8-11 8z" fill="currentColor"></path><rect x="16.5" y="4" width="3.5" height="16" rx="1" fill="currentColor"></rect></svg>
@@ -485,24 +597,24 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </div>
 </sc-if>
 <sc-if value="{{roundBadgeOn}}" hint-placeholder-val="{{ false }}">
-<div class="hud" style="position: absolute; left: 50%; top: 56px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 8px; background: rgba(9,22,30,0.86); border: 1.5px solid {{roundCol}}; white-space: nowrap; pointer-events: none">
+<div class="hud" style="position: absolute; left: 50%; top: 56px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 6px 16px; clip-path: polygon(9px 0, 100% 0, calc(100% - 9px) 100%, 0 100%); background: rgba(9,22,30,0.88); box-shadow: inset 0 0 0 1.5px {{roundCol}}; white-space: nowrap; pointer-events: none">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: {{roundCol}}">{{roundTitle}}</span>
 <span style="font-size: 12px; color: rgba(238,244,246,0.85)">{{roundHint}}</span>
 </div>
 </sc-if>
 <sc-if value="{{intHintOn}}" hint-placeholder-val="{{ false }}">
-<button type="button" onClick="{{skipRound}}" class="hud" style="position: absolute; right: 214px; top: 231px; height: 32px; padding: 0 14px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.5); background: rgba(9,22,30,0.8); color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; cursor: pointer">SKIP ROUND ›</button>
+<button type="button" onClick="{{skipRound}}" class="hud" style="position: absolute; right: 214px; top: 231px; height: 32px; padding: 0 16px; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); background: rgba(6,14,20,0.82); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.45); color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; cursor: pointer">SKIP ROUND ›</button>
 </sc-if>
 <sc-if value="{{intUI}}" hint-placeholder-val="{{ true }}">
-<button type="button" class="tapzone {{padPulse}}" onPointerDown="{{tapPad}}" aria-label="Tap for intensity" style="position: absolute; right: 84px; top: 58px; width: 118px; height: 118px; padding: 0; border-radius: 50%; border: 4px solid #ffffff; background: {{accent}}; color: #0b1419; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; box-shadow: 0 0 0 {{padRing}}px rgba(255,90,31,0.35), 0 8px 24px rgba(0,0,0,0.5); transform: scale({{padScale}})">
-<svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="#ffffff" stroke="#0b1419" stroke-width="1" stroke-linejoin="round"></path></svg>
-<span class="hud" style="font-size: 14px; font-weight: 700; letter-spacing: 0.1em">INTENSITY</span>
+<button type="button" class="tapzone {{padPulse}}" onPointerDown="{{tapPad}}" aria-label="Tap for intensity" style="position: absolute; right: 84px; top: 58px; width: 118px; height: 118px; padding: 0; border-radius: 50%; border: 4px solid #ffffff; background: radial-gradient(circle at 50% 32%, #ff9a5e, #FF5A1F 58%, #dd4a10); color: #0b1419; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; cursor: pointer; box-shadow: 0 0 0 {{padRing}}px rgba(255,90,31,0.35), 0 8px 24px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.4), inset 0 -4px 0 rgba(0,0,0,0.22); transform: scale({{padScale}})">
+<svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" style="filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3))"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="#ffffff" stroke="#0b1419" stroke-width="1" stroke-linejoin="round"></path></svg>
+<span class="hud" style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em">INTENSITY</span>
 </button>
 </sc-if>
 <sc-if value="{{boredOn}}" hint-placeholder-val="{{ false }}">
-<button type="button" class="tapzone" onPointerDown="{{tapBored}}" aria-label="Tap when it gets boring" style="position: absolute; right: 84px; top: 188px; width: 118px; height: 118px; padding: 0; border-radius: 50%; border: 4px solid #ffffff; background: #4f7385; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; box-shadow: 0 0 0 {{boredRing}}px rgba(125,170,190,0.35), 0 8px 24px rgba(0,0,0,0.5); transform: scale({{boredScale}})">
-<span style="font-size: 36px; line-height: 1; font-weight: 800; letter-spacing: -0.02em">z<span style="font-size: 28px">z</span><span style="font-size: 21px">z</span></span>
-<span class="hud" style="font-size: 14px; font-weight: 700; letter-spacing: 0.1em">BORED</span>
+<button type="button" class="tapzone" onPointerDown="{{tapBored}}" aria-label="Tap when it gets boring" style="position: absolute; right: 84px; top: 188px; width: 118px; height: 118px; padding: 0; border-radius: 50%; border: 4px solid #ffffff; background: radial-gradient(circle at 50% 32%, #6f95a8, #46657a 66%, #3a566a); color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; cursor: pointer; box-shadow: 0 0 0 {{boredRing}}px rgba(125,170,190,0.35), 0 8px 24px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.28), inset 0 -4px 0 rgba(0,0,0,0.22); transform: scale({{boredScale}})">
+<span style="font-size: 36px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; text-shadow: 0 2px 3px rgba(0,0,0,0.35)">z<span style="font-size: 28px">z</span><span style="font-size: 21px">z</span></span>
+<span class="hud" style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em">BORED</span>
 </button>
 </sc-if>
 
@@ -512,7 +624,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <span>{{logChipText}}</span>
 </button>
 </sc-if>
-<div style="position: absolute; left: 10px; right: 78px; bottom: 8px; height: 54px; border-radius: 12px; background: rgba(9,22,30,0.66); border: 1.5px solid rgba(98,160,176,0.25); overflow: visible">
+<div style="position: absolute; left: 10px; right: 78px; bottom: 8px; height: 54px; border-radius: 14px; background: rgba(9,22,30,0.74); border: 1.5px solid rgba(125,232,255,0.2); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 6px 16px rgba(0,0,0,0.32); overflow: visible">
 <svg width="756" height="54" viewBox="0 0 756 54" style="position: absolute; left: 0; top: 0; overflow: visible" aria-hidden="true">
 <defs>
 <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="rgba(255,255,255,0.08)"></rect><rect width="2.4" height="6" fill="{{accent}}"></rect></pattern>
@@ -538,38 +650,38 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </div>
 
 <div style="opacity: {{railOp}}; pointer-events: {{railPe}}">
-<div style="position: absolute; right: 10px; top: 62px; bottom: 10px; width: 60px; box-sizing: border-box; padding: 8px 0; border-radius: 22px; background: rgba(9,22,30,0.8); border: 1.5px solid rgba(98,160,176,0.32); display: flex; flex-direction: column; align-items: center; justify-content: space-between">
+<div style="position: absolute; right: 10px; top: 62px; bottom: 10px; width: 60px; box-sizing: border-box; padding: 8px 0; border-radius: 22px; background: rgba(9,22,30,0.82); border: 1.5px solid rgba(125,232,255,0.2); box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 22px rgba(0,0,0,0.35); display: flex; flex-direction: column; align-items: center; justify-content: space-between">
 <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
-<button type="button" onClick="{{funKey}}" onPointerDown="{{funDown}}" aria-label="Fun: tap to mark this moment, or drag onto the game to pin it" style="touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: #0e1c24; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<button type="button" onClick="{{funKey}}" onPointerDown="{{funDown}}" aria-label="Fun: tap to mark this moment, or drag onto the game to pin it" style="touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: #0e1c24; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 14.5c1 1.3 2.2 2 3.5 2s2.5-.7 3.5-2"></path><circle cx="9" cy="10" r=".8" fill="currentColor"></circle><circle cx="15" cy="10" r=".8" fill="currentColor"></circle></svg>
 </button>
-<span style="font-size: 9px; color: rgba(238,244,246,0.65)">Fun</span>
+<span style="font-size: 10px; font-weight: 600; color: rgba(238,244,246,0.78)">Fun</span>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
-<button type="button" onClick="{{fruKey}}" onPointerDown="{{fruDown}}" aria-label="Frustration: tap to mark this moment, or drag onto the game to pin it" style="touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: #0e1c24; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<button type="button" onClick="{{fruKey}}" onPointerDown="{{fruDown}}" aria-label="Frustration: tap to mark this moment, or drag onto the game to pin it" style="touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: #0e1c24; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 16.5c1-1.3 2.2-2 3.5-2s2.5.7 3.5 2"></path><circle cx="9" cy="10" r=".8" fill="currentColor"></circle><circle cx="15" cy="10" r=".8" fill="currentColor"></circle></svg>
 </button>
-<span style="font-size: 8.5px; letter-spacing: -0.02em; color: rgba(238,244,246,0.65)">Frustration</span>
+<span style="font-size: 9.5px; letter-spacing: -0.01em; font-weight: 600; color: rgba(238,244,246,0.78)">Frustration</span>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
-<button type="button" onClick="{{openEmo}}" aria-label="Tag an emotion" style="width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{emoBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<button type="button" onClick="{{openEmo}}" aria-label="Tag an emotion" style="width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{emoBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">
 <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" fill="#ff5c7a" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"></path></svg>
 </button>
-<span style="font-size: 9px; color: rgba(238,244,246,0.65)">Emotion</span>
+<span style="font-size: 10px; font-weight: 600; color: rgba(238,244,246,0.78)">Emotion</span>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
-<button type="button" class="{{qPulse}}" onClick="{{fbKey}}" onPointerDown="{{fbDown}}" aria-label="Feedback: drag onto the game to give feedback on that spot, tap for the question" style="position: relative; touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{qBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<button type="button" class="{{qPulse}}" onClick="{{fbKey}}" onPointerDown="{{fbDown}}" aria-label="Feedback: drag onto the game to give feedback on that spot, tap for the question" style="position: relative; touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{qBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">
 <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H10l-5 4.5V15H4z" fill="#ffffff"></path></svg>
 <sc-if value="{{qBadgeOn}}" hint-placeholder-val="{{ false }}"><span class="hud" style="position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; border-radius: 9px; background: #ffffff; color: #0b1419; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">1</span></sc-if>
 </button>
-<span style="font-size: 9px; color: rgba(238,244,246,0.65)">Feedback</span>
+<span style="font-size: 10px; font-weight: 600; color: rgba(238,244,246,0.78)">Feedback</span>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
-<button type="button" class="{{aPulse}}" onClick="{{aKey}}" onPointerDown="{{aDown}}" aria-label="Annotation: drag onto the game to add a note, tap to confirm detections" style="position: relative; touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{aBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<button type="button" class="{{aPulse}}" onClick="{{aKey}}" onPointerDown="{{aDown}}" aria-label="Annotation: drag onto the game to add a note, tap to confirm detections" style="position: relative; touch-action: none; width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid {{accent}}; background: {{aBg}}; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08); transition: transform 0.12s cubic-bezier(.2,.8,.2,1)">
 <span class="hud" style="font-size: 20px; font-weight: 700">A</span>
 <sc-if value="{{aBadgeOn}}" hint-placeholder-val="{{ false }}"><span class="hud" style="position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; border-radius: 9px; background: #ffffff; color: #0b1419; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{aBadge}}</span></sc-if>
 </button>
-<span style="font-size: 8.5px; letter-spacing: -0.02em; color: rgba(238,244,246,0.65)">Annotation</span>
+<span style="font-size: 9.5px; letter-spacing: -0.01em; font-weight: 600; color: rgba(238,244,246,0.78)">Annotation</span>
 </div>
 </div>
 </div>
@@ -578,7 +690,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <sc-if value="{{tasksBadgeOn}}" hint-placeholder-val="{{ true }}"><span class="hud" style="position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; border-radius: 9px; background: #ffffff; color: #e5484d; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{tasksLeft}}</span></sc-if>
 </button>
 <sc-if value="{{railLockOn}}" hint-placeholder-val="{{ false }}">
-<div class="hud" style="position: absolute; right: 8px; top: 150px; width: 64px; padding: 6px 2px; border-radius: 10px; background: rgba(9,22,30,0.92); border: 1.5px solid rgba(255,255,255,0.3); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-align: center; line-height: 1.25; pointer-events: none">LOCKED<br>UNTIL<br>ROUND 2</div>
+<div class="hud" style="position: absolute; right: 8px; top: 150px; width: 64px; padding: 8px 2px; border-radius: 12px; background: rgba(6,14,20,0.92); border: 1.5px solid rgba(125,232,255,0.3); box-shadow: 0 6px 16px rgba(0,0,0,0.35); font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; color: rgba(238,244,246,0.85); text-align: center; line-height: 1.3; pointer-events: none">LOCKED<br>UNTIL<br>ROUND 2</div>
 </sc-if>
 
 <div style="position: absolute; left: 0; top: 0; width: 844px; height: 390px; pointer-events: none">
@@ -646,7 +758,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <input id="notetext" type="text" ref="{{focusInput}}" value="{{noteText}}" onChange="{{onNoteText}}" onKeyDown="{{onNoteKey}}" placeholder="{{notePh}}" autocomplete="off" style="height: 44px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.3); background: #06121a; color: #ffffff; font-size: 16px; font-family: inherit">
 <div style="display: flex; gap: 8px">
 <button type="button" onClick="{{cancelNote}}" style="flex-grow: 1; height: 38px; border-radius: 9px; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; font-size: 13px; font-weight: 700; cursor: pointer">Cancel</button>
-<button type="button" onClick="{{saveNote}}" disabled="{{noteSaveDisabled}}" style="flex-grow: 1; height: 38px; border-radius: 9px; border: none; background: {{accent}}; color: #0b1419; font-size: 13px; font-weight: 700; cursor: pointer; opacity: {{noteSaveOp}}">Pin it</button>
+<button type="button" onClick="{{saveNote}}" disabled="{{noteSaveDisabled}}" style="flex-grow: 1; height: 38px; border-radius: 9px; border: none; background: {{accent}}; color: #0b1419; font-size: 13px; font-weight: 800; cursor: pointer; opacity: {{noteSaveOp}}; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 0 rgba(0,0,0,0.2), 0 5px 12px rgba(255,90,31,0.28)">Pin it</button>
 </div>
 </div>
 </sc-if>
@@ -760,7 +872,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <sc-if value="{{emoGroupsOn}}" hint-placeholder-val="{{ true }}">
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
 <sc-for list="{{emoGroups}}" as="g" hint-placeholder-count="6">
-<button type="button" onClick="{{g.pick}}" style="height: 62px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer">
+<button type="button" onClick="{{g.pick}}" style="height: 62px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); transition: transform 0.12s cubic-bezier(.2,.8,.2,1), border-color 0.12s">
 <span class="hud" style="font-size: 16px; font-weight: 700">{{g.name}}</span>
 <span style="font-size: 11px; color: rgba(238,244,246,0.6)">{{g.sub}}</span>
 </button>
@@ -820,7 +932,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 <button type="button" onClick="{{r.pick}}" aria-label="{{r.aria}}" class="hud" style="width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1.5px solid {{r.border}}; background: {{r.bg}}; font-size: 13px; font-weight: 700; cursor: pointer">{{r.n}}</button>
 </sc-for>
 </div>
-<button type="button" onClick="{{submitQ}}" disabled="{{qDisabled}}" style="height: 44px; border-radius: 12px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 700; cursor: pointer; opacity: {{qOpacity}}">Submit answer</button>
+<button type="button" onClick="{{submitQ}}" disabled="{{qDisabled}}" style="height: 44px; border-radius: 10px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 800; letter-spacing: 0.02em; cursor: pointer; opacity: {{qOpacity}}; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 0 rgba(0,0,0,0.2), 0 5px 14px rgba(255,90,31,0.3)">Submit answer</button>
 </sc-if>
 </div>
 </sc-if>
@@ -1003,7 +1115,7 @@ html, body { height: 100%; margin: 0; overflow: hidden; background: #000; oversc
 </sc-for>
 </div>
 <textarea id="logwhy" value="{{logWhy}}" onChange="{{onLogWhy}}" placeholder="In your own words (optional)" style="min-height: 38px; flex-shrink: 0; resize: none; box-sizing: border-box; padding: 6px 10px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.25); background: #06121a; color: #ffffff; font-size: 13px; font-family: inherit"></textarea>
-<button type="button" onClick="{{saveLog}}" disabled="{{logSaveDisabled}}" style="height: 38px; flex-shrink: 0; border-radius: 11px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 700; cursor: pointer; opacity: {{logSaveOpacity}}">{{logSaveText}}</button>
+<button type="button" onClick="{{saveLog}}" disabled="{{logSaveDisabled}}" style="height: 38px; flex-shrink: 0; border-radius: 10px; border: none; background: {{accent}}; color: #0b1419; font-size: 14px; font-weight: 800; cursor: pointer; opacity: {{logSaveOpacity}}; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 0 rgba(0,0,0,0.2), 0 5px 12px rgba(255,90,31,0.28)">{{logSaveText}}</button>
 </div>
 </sc-if>
 </div>
@@ -2570,6 +2682,8 @@ class Component extends DCLogic {
         const snap = await R.db.doc('sessions/' + R.uid).get();
         R.returning = snap.exists;
       } catch (e) {}
+    } else {
+      try { R.returning = !!localStorage.getItem('rhage.answers'); } catch (e) {}
     }
     paint();
     if (R.remembered && !R.consent) begin(R.remembered.code || '', true);
@@ -2582,8 +2696,10 @@ class Component extends DCLogic {
     if (!st) return;
     if (R.mode === 'checking') st.textContent = 'Connecting…';
     else if (R.mode === 'db') st.textContent = 'Your answers will be saved automatically.';
-    else st.textContent = 'Automatic saving is not set up in this version. At the end you can save your answers as a file and send it to the researcher.';
-    $('rh-withdraw').style.display = R.mode === 'db' && R.returning ? '' : 'none';
+    else st.textContent = 'Your answers are saved on this device only. Export or delete them any time from here.';
+    if (R.mode === 'file') { try { R.returning = !!localStorage.getItem('rhage.answers'); } catch (e) {} }
+    const ex = $('rh-export'); if (ex) ex.style.display = R.mode === 'file' && R.returning ? '' : 'none';
+    $('rh-withdraw').style.display = R.returning ? '' : 'none';
     $('rh-results').style.display = R.owner ? '' : 'none';
     const cc = $('rh-close-consent'); if (cc) cc.style.display = R.consent ? '' : 'none';
     check();
@@ -2602,7 +2718,7 @@ class Component extends DCLogic {
     if (id === 'rh-results') openResults();
     if (id === 'rh-res-close') $('rh-res').hidden = true;
     if (id === 'rh-res-csv') downloadCsv();
-    if (id === 'rh-save-file') saveFile();
+    if (id === 'rh-save-file' || id === 'rh-export') saveFile();
   });
 
   R.showConsent = () => { $('rh-consent').hidden = false; $('rh-adult').checked = true; $('rh-agree').checked = true; paint(); };
@@ -2617,6 +2733,8 @@ class Component extends DCLogic {
     push({ type: 'consent', code });
     if (R.mode === 'db') {
       R.db.doc('sessions/' + R.uid).set({ code, lastAt: R.consent.at }).catch(fail);
+    } else {
+      persistLocal();
     }
     setInterval(flush, 4000);
     if (window.__rhJourney && window.__rhJourney.afterConsent) window.__rhJourney.afterConsent();
@@ -2682,8 +2800,15 @@ class Component extends DCLogic {
       blitz: s.blitzResult || null, playerDna: s.profile ? s.profile.top : null,
     };
   }
+  function persistLocal() {
+    if (!R.consent) return;
+    try {
+      localStorage.setItem('rhage.answers', JSON.stringify({ summary: summary(), runId: R.runId, events: R.all }));
+    } catch (e) {}
+  }
   async function flush() {
-    if (R.mode !== 'db' || !R.consent || R.saving || !R.dirty) return;
+    if (R.mode !== 'db') { if (R.dirty && R.consent) { persistLocal(); R.dirty = false; } return; }
+    if (!R.consent || R.saving || !R.dirty) return;
     R.saving = true;
     const batch = R.buf; R.buf = []; R.dirty = false;
     const base = 'sessions/' + R.uid + '/runs/' + R.runId;
@@ -2709,17 +2834,51 @@ class Component extends DCLogic {
     $('rh-end-text').textContent = file ? 'Thank you! Please save your answers and send the file to the researcher.' : (R.savedOnce && !R.dirty ? 'Thank you! Your answers are saved.' : 'Thank you! Saving your answers…');
     $('rh-save-file').hidden = !file;
   }
+  function dlText(name, text, mime) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: mime }));
+    a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }
   async function saveFile() {
-    const data = JSON.stringify({ summary: R.consent ? summary() : null, events: R.all }, null, 1);
-    const name = 'rhage-answers-' + (R.runId || 'session') + '.json';
-    if (R.dl) { try { await R.dl.save({ filename: name, data }); return; } catch (e) {} }
-    try { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([data], { type: 'application/json' })); a.download = name; a.click(); } catch (e) {}
+    if (!R.all.length && !localStorage.getItem('rhage.answers')) return;
+    persistLocal();
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem('rhage.answers') || 'null'); } catch (e) {}
+    const events = (stored && stored.events && stored.events.length >= R.all.length) ? stored.events : R.all;
+    const sum = (stored && stored.summary && !R.consent) ? stored.summary : (R.consent ? summary() : (stored && stored.summary));
+    const stamp = (sum && sum.startedAt || new Date().toISOString()).slice(0, 10);
+    const json = JSON.stringify({ summary: sum, events }, null, 1);
+    const csv = toCsv([{ tester: (sum && sum.code) || '', run: R.runId || (stored && stored.runId) || '', sum: sum || {}, events }]);
+    dlText('rhage-answers-' + stamp + '.json', json, 'application/json');
+    dlText('rhage-answers-' + stamp + '.csv', csv, 'text/csv');
+    const btn = $('rh-export'); if (btn) { btn.textContent = 'Exported ✓'; setTimeout(() => { btn.textContent = 'Export my answers'; }, 2200); }
+  }
+  function toCsv(runs) {
+    const head = ['tester', 'session', 'code', 'play', 'clip_time_s', 'ms_since_start', 'type', 'question_or_id', 'value', 'text', 'reasons', 'x', 'y'];
+    const cell = (v) => { if (v == null) return ''; const s = typeof v === 'string' ? v : JSON.stringify(v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    const lines = [head.join(',')];
+    runs.forEach((x) => (x.events || []).forEach((e) => {
+      const val = e.v !== undefined ? e.v : e.label !== undefined ? e.label : e.ref;
+      lines.push([x.tester, x.run, (x.sum && x.sum.code) || '', e.play, e.at != null ? e.at : e.t, e.ms, e.type, e.q || e.id || '', val, e.text || e.why || '', e.reasons, e.x, e.y].map(cell).join(','));
+    }));
+    return lines.join('\n');
   }
 
   // ---------- withdraw ----------
   async function withdraw() {
     const b = $('rh-withdraw'); b.disabled = true; b.textContent = 'Deleting…';
     try {
+      if (R.mode !== 'db') {
+        try {
+          localStorage.removeItem('rhage.answers'); localStorage.removeItem('rhage.consent');
+          localStorage.removeItem('rhage.progress'); localStorage.removeItem('rhage.plays'); localStorage.removeItem('rhage.wallet');
+        } catch (e) {}
+        R.returning = false; R.all = []; R.buf = []; R.dirty = false; R.consent = null;
+        b.textContent = 'Your answers are deleted'; paint();
+        return;
+      }
       const runs = await R.db.collection('sessions/' + R.uid + '/runs').get();
       for (const r of runs.docs) {
         const evs = await R.db.collection('sessions/' + R.uid + '/runs/' + r.id + '/ev').get();
