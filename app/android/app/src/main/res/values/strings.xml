@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RHAGE</string>
+    <string name="title_activity_main">RHAGE</string>
+    <string name="package_name">com.plaisense.rhage</string>
+    <string name="custom_url_scheme">com.plaisense.rhage</string>
+</resources>

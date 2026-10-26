@@ -1,0 +1,17 @@
+{
+  "appId": "com.plaisense.rhage",
+  "appName": "RHAGE",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#03080b",
+    "allowMixedContent": false
+  },
+  "ios": {
+    "backgroundColor": "#03080b",
+    "scrollEnabled": false,
+    "allowsLinkPreview": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

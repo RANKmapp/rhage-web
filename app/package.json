@@ -1,0 +1,21 @@
+{
+  "name": "rhage-app",
+  "private": true,
+  "version": "1.1.0",
+  "description": "RHAGE native shell (Capacitor). Web app lives at the repo root; scripts/sync-www.mjs copies it into www/ before cap sync.",
+  "scripts": {
+    "sync": "node scripts/sync-www.mjs && cap sync android",
+    "sync:ci": "node scripts/sync-www.mjs && cap sync android",
+    "build:android": "npm run sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/ios": "^8.5.3",
+    "@capacitor/share": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3"
+  }
+}
